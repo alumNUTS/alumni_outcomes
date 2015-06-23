@@ -1,0 +1,8 @@
+<h1>Edit your Information</h1>
+
+<%= form_for @student do |form| %>
+  <%= render form %>
+  <div class="actions">
+    <%= form.submit 'Submit Edits!' %>
+  </div>
+<% end %>
