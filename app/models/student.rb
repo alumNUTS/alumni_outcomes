@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
 
-	validates :email
+	validates :email, uniqueness: true
   
   has_secure_password
 
