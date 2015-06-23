@@ -1,4 +1,4 @@
-class Class < ActiveRecord::Base
+class Cohort < ActiveRecord::Base
 
 	belongs_to :officer
 	has_many :students

@@ -1,5 +1,9 @@
 class Student < ActiveRecord::Base
 
-	belongs_to :classes
+	validates :email
+  
+  has_secure_password
+
+	belongs_to :cohort
 
 end

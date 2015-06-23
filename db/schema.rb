@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150623155801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classes", force: :cascade do |t|
+  create_table "cohorts", force: :cascade do |t|
     t.string  "name",       null: false
     t.integer "officer_id"
     t.date    "start_date"

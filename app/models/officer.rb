@@ -1,5 +1,7 @@
 class Officer < ActiveRecord::Base
+	
+	has_secure_password
 
-	has_many :classes
+	has_many :cohorts
 
 end
