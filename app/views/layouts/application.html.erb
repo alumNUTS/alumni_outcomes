@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if request.fullpath != "/"%>
+  <%= link_to "Logout", logout_path, method: "DELETE" %>
+<% end %>
 <%= yield %>
 
 </body>
