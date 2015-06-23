@@ -1,0 +1,8 @@
+<h1>Student Sign-up Form</h1>
+
+<%= form_for @student do |form| %>
+  <%= render form %>
+  <div class="actions">
+    <%= form.submit 'Sign Up!' %>
+  </div>
+<% end %>

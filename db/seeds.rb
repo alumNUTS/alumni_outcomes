@@ -1,9 +1,9 @@
 # 
 # Seed Data for testing app
 #
-#
-#
-#
+Student.destroy_all
+Officer.destroy_all
+Cohort.destroy_all
 
 Officer.create(name: 'Kyle Lee', email: 'kyle@example.com', password: 'password')
 
