@@ -11,7 +11,7 @@ class CreateStudents < ActiveRecord::Migration
     	t.text :skills
     	t.string :company_name
     	t.date :employment_date
-    	t.integer :class_id
+    	t.integer :cohort_id
     	t.string :status, default: "student"
     	t.boolean :survey_complete
     	t.string :image
