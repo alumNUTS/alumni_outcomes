@@ -1,9 +1,9 @@
 class CohortsController < ApplicationController
 
-	before_action :authorize
+
+  before_action :authorize, except: [:show]
 
 	def index
-
 		@cohorts = Cohort.all
 		render :index
 	end
@@ -14,8 +14,12 @@ class CohortsController < ApplicationController
 	end
 
 	def new
-		@cohort = Cohort.new
-    @officer = Officer.find(session[:user_id])
+    if !is_student?
+  		@cohort = Cohort.new
+      @officer = Officer.find(session[:user_id])
+    else
+      redirect_to '/'
+    end
 	end
 
 	def create
