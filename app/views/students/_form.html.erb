@@ -8,7 +8,7 @@
 </div>
 <% if @student.id == nil %>
   <%= form.label "password" %><br>
-  <%= form.password_field_tag :password_digest %>
+  <%= form.password_field :password_digest %>
 <% end %>
 </div>
 <div>
@@ -43,14 +43,3 @@
   <%= form.label :company_name %><br>
   <%= form.text_field :company_name %>
 </div>
-<div>
-  <%= form.label :status %><br>
-  <%= form.text_field :status %>
-</div>
-<div>
-  <%= form.label :survey_complete %><br>
-  <%= form.check_box :survey_complete %>
-</div>
-
-
-
