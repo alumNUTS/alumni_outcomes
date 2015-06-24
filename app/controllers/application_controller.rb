@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :is_hundred_days?, :current_user, :is_student?, :logged_in?
   before_action :alumni, :outcomes
+
+  private
+
   def is_hundred_days?(cohort_id)
     start_date = Cohort.find(cohort_id).start_date
     date_diff = Date.today - start_date
