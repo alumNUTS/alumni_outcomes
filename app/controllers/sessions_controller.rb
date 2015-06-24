@@ -7,11 +7,11 @@ class SessionsController < ApplicationController
     officer = Officer.find_by({email: params[:email]})
     user = nil
 
-    if student != nil {
+    if student != nil 
       user = student
-    } elsif officer != nil {
+    elsif officer != nil
       user = officer
-    }
+    end
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
