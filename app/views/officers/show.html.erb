@@ -6,7 +6,7 @@
 	<ul>
 		<% @cohort_stats.each do |cohort| %>
 		<li>
-			<a href=<%="cohorts/#{cohort[:id]}"%>>
+			<a href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
 				<%= "#{cohort[:name]}" %>
 			</a>
 			<br>
