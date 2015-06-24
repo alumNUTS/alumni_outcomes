@@ -7,8 +7,12 @@
   <%= form.email_field :email %>
 </div>
 <div>
+  <%= form.label :cohort_id %><br>
+  <%= form.select(:cohort_id, options_from_collection_for_select(@cohorts, :id, :name)) %>
+</div>
+<div>
   <%= form.label :phone_number %><br>
-  <%= form.phone_field :phone_number %>
+  <%= form.text_field :phone_number %>
 </div>
 <div>
   <%= form.label :city %><br>
@@ -17,10 +21,6 @@
 <div>
   <%= form.label :state %><br>
   <%= form.text_field :state %>
-</div>
-<div>
-  <%= form.label :password_digest %><br>
-  <%= form.password_field :password_digest %>
 </div>
 <div>
   <%= form.label :skills %><br>
