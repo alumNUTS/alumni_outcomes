@@ -13,6 +13,7 @@ class CohortsController < ApplicationController
 
 	def new
 		@cohort = Cohort.new
+    @officer = Officer.find(session[:user_id])
 	end
 
 	def create
@@ -25,7 +26,7 @@ class CohortsController < ApplicationController
     @cohort.end_date = params["cohort"]["end_date"]
 
     if @cohort.save
-      redirect_to "/officers"
+      redirect_to "/officers/#{session[:user_id]}"
     else
       render :new
     end

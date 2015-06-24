@@ -1,0 +1,14 @@
+<h1>List of All Students</h1>
+
+<% @students.each do |student| %>
+  <a href="/students/<%= student.id %>"><%= student.name %></a><br>
+<% end %>
+
+
+
+
+<% if session[:user_type] == "officer" %>
+<%= link_to 'home', "/officers/#{session[:user_id]}" %>
+<% else %>
+<%= link_to 'home', "/students/#{session[:user_id]}" %>
+<% end %>
