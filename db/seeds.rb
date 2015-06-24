@@ -14,4 +14,3 @@ Student.create(name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', passw
 Student.create(name: 'Domenica LaLima', email: 'dlalima@yahoo.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1)
 Student.create(name: 'Mark Paulson', email: 'markpaulson1@hotmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1)
 Student.create(name: 'Orin Xie', email: 'orin.xie@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1)
-
