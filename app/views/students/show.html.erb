@@ -1,0 +1,44 @@
+<%= link_to 'View cohort', @student.cohort %>
+<a href="#">Send email</a>
+<h1><%= @student.name %></h1>
+<p><%= @student.status %></p>
+<%= image_tag gravatar_url(@student.email, '100x100') %>
+<p>Class: <%= @student.cohort.name %></p>
+<p>Officer: <%= @student.cohort.officer.name %>
+<p>Email: <%= @student.email %></p>
+<p>Phone number: <%= @student.phone_number %></p>
+<p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
+<% if @student.is_employed %>
+  <p>EMPLOYED</p>
+  <p>Company: <%= @student.company %></p>
+  <p>Started: <%= @student.employment_date %></p>
+<% else %>
+  <p>UNEMPLOYED</p>
+<% end %>
+<% if @student.skills != nil %>
+  <p>Skills:
+    <% @student.skills.gsub(",", "").split.each do |skill| %>
+    <span><%= skill %></span>
+    <% end %>
+  </p>
+<% end%>
+<% if is_hundred_days?(@student.cohort.id) %>
+  <p>Survey:
+  <% if @student.survey_complete %>
+    COMPLETED
+  <% else %>
+    PENDING <a href="#">Take a survey</a>
+  <% end %>
+  </p>
+<% end %>
+
+<% if students_page? %>
+  <%= link_to "Edit", edit_student_path(@student) %>
+
+  <%= form_tag(student_path, method: :delete) %>
+  <%= submit_tag 'Delete profile' %>
+
+<% end %>
+
+
+
