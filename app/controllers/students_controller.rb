@@ -4,7 +4,11 @@ class StudentsController < ApplicationController
   helper_method :students_page?
   def show
     if logged_in?
-      @student = Student.find(params[:id])
+      if is_student? && (current_user.id != params[:id].to_i)
+        redirect_to '/'
+      else
+        @student = Student.find(params[:id])
+      end
     else
       redirect_to '/'
     end

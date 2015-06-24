@@ -6,9 +6,3 @@
 
 
 
-
-<% if session[:user_type] == "officer" %>
-<%= link_to 'home', "/officers/#{session[:user_id]}" %>
-<% else %>
-<%= link_to 'home', "/students/#{session[:user_id]}" %>
-<% end %>

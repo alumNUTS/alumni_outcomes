@@ -6,6 +6,7 @@ class OfficersController < ApplicationController
 	def show
 		# setting @officer to the officer currently logged in
 		@officer = Officer.find(params[:id])
+	end
 
 
 	def show

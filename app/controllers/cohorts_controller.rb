@@ -9,8 +9,14 @@ class CohortsController < ApplicationController
 	end
 
 	def show
-		@cohort = Cohort.find(params[:id])
-		@students = Student.where(cohort_id: @cohort.id)
+
+    if is_student? && (current_user.cohort.id != params[:id].to_i)
+      redirect_to "/students/#{current_user.id}"
+    else
+      @cohort = Cohort.find(params[:id])
+      @students = Student.where(cohort_id: @cohort.id)
+    end
+
 	end
 
 	def new
