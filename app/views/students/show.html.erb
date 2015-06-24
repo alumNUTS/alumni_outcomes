@@ -32,7 +32,7 @@
   </p>
 <% end %>
 
-<% if is_student? %>
+<% if students_page? %>
   <%= link_to "Edit", edit_student_path(@student) %>
 
   <%= form_tag(student_path, method: :delete) %>

@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
 
   before_action :authorize, except: [:create, :new, :show]
-  helper_method :is_student?
+  helper_method :students_page?
   def show
-    if session[:user_id]
+    if logged_in?
       @student = Student.find(params[:id])
     else
       redirect_to '/'
@@ -35,14 +35,19 @@ class StudentsController < ApplicationController
 
 private
 
+def students_page?
+  student = Student.find(params[:id])
+  is_student? && student == current_user
+end
+
 def student_params
   params.require(:student).permit(:name, :email, :phone_number, :city, :state, :password_digest, :skills, :is_employed, :employment_date, :company_name, :status, :survey_complete)
 end
 
-def is_student?
-  student = Student.find(params[:id])
-  !student.nil?
+def logged_in?
+  !current_user.nil?
 end
+
 
 end
 

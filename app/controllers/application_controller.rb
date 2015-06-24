@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :is_hundred_days?, :current_user
+  helper_method :is_hundred_days?, :current_user, :is_student?
   before_action :alumni, :outcomes
   def is_hundred_days?(cohort_id)
     start_date = Cohort.find(cohort_id).start_date
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      if Student.exists?(session[:user_id])
+      if Student.exists?(:email => session[:user_email])
         @current_user ||= Student.find(session[:user_id])
       else
         @current_user ||= Officer.find(session[:user_id])
@@ -40,6 +40,10 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to '/login' unless current_user
+  end
+
+  def is_student?
+    Student.exists?(:email => current_user.email)
   end
 
 

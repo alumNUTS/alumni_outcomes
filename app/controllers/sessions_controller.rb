@@ -9,13 +9,16 @@ class SessionsController < ApplicationController
 
     if student != nil
       user = student
+      path = "/students/#{user.id}"
     elsif officer != nil
       user = officer
+      path = "/officers/#{user.id}"
     end
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to student_path(user)
+      session[:user_email] = user.email
+      redirect_to path
 
     else
       redirect_to '/login'
@@ -24,6 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:user_email] = nil
     redirect_to '/login'
   end
 end
