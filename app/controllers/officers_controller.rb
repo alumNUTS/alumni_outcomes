@@ -1,5 +1,7 @@
 class OfficersController < ApplicationController
 
+	before_action :authorize
+
 	def show
 		# setting @officer to the officer currently logged in
 		@officer = Officer.find(params[:id])

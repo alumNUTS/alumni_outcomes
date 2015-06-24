@@ -1,5 +1,7 @@
 class CohortsController < ApplicationController
 
+	before_action :authorize
+
 	def index
 
 		@cohorts = Cohort.all

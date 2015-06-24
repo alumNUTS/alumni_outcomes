@@ -6,6 +6,11 @@
   <%= form.label :email %><br>
   <%= form.email_field :email %>
 </div>
+<% if @student.id == nil %>
+  <%= form.label "password" %><br>
+  <%= form.password_field_tag :password_digest %>
+<% end %>
+</div>
 <div>
   <%= form.label :cohort_id %><br>
   <%= form.select(:cohort_id, options_from_collection_for_select(@cohorts, :id, :name)) %>
