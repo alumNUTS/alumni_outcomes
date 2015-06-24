@@ -24,7 +24,6 @@ class OfficersController < ApplicationController
 			}
 		end
 
-
 	end
 
 end

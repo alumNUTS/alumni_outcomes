@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :students
-  resources :officers
-  resources :cohorts
+  resources :officers do
+	  resources :cohorts
+	end
+
+	resources :cohorts, only: [:show]
 
 end
