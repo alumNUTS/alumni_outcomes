@@ -1,5 +1,9 @@
 <h1>Edit your Information</h1>
-
+<ul>
+<% @student.errors.each do |field, message| %>
+  <li><%= field %> <%= message %></li>
+<% end %>
+</ul>
 <%= form_for @student do |form| %>
   <%= render form %>
   <div class="actions">
