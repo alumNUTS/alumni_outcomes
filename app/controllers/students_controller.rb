@@ -44,9 +44,7 @@ def student_params
   params.require(:student).permit(:name, :email, :phone_number, :city, :state, :password_digest, :skills, :is_employed, :employment_date, :company_name, :status, :survey_complete)
 end
 
-def logged_in?
-  !current_user.nil?
-end
+
 
 
 end

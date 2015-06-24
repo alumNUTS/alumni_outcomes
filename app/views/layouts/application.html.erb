@@ -8,8 +8,8 @@
 </head>
 <body>
 <% if request.fullpath != "/" && request.fullpath != "/login"%>
-  <%= link_to "Logout", logout_path, method: "DELETE" %>
 <% end %>
+<%= link_to "Logout", logout_path, method: "DELETE" %>
 <%= yield %>
 
 </body>

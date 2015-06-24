@@ -46,6 +46,10 @@ class ApplicationController < ActionController::Base
     Student.exists?(:email => current_user.email)
   end
 
+  def logged_in?
+    !current_user.nil?
+  end
+
 
 
 end
