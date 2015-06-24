@@ -30,7 +30,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      binding.pry
       if Student.exists?(session[:user_id])
         @current_user ||= Student.find(session[:user_id])
       else

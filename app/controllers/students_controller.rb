@@ -3,11 +3,15 @@ class StudentsController < ApplicationController
   before_action :authorize, except: [:create, :new, :show]
   helper_method :is_student?
   def show
-    @student = Student.find(params[:id])
+    if session[:user_id]
+      @student = Student.find(params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
   def new
-  @student = Student.new
+    @student = Student.new
   end
 
 	def edit
@@ -16,12 +20,18 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-	if @student.update(student_params)
+	 if @student.update(student_params)
 		redirect_to "/students/#{@student.id}"
-	else
+	 else
 		render :edit
-	end
-end
+	 end
+  end
+
+  def destroy
+    student = Student.find(params[:id])
+    student.destroy
+    redirect_to '/'
+  end
 
 private
 
