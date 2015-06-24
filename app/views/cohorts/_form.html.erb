@@ -3,18 +3,16 @@
   <%= form.text_field :name %>
 </div>
 <div>
-  <span>Officer</span>
+  <%= form.label :officer %><br>
 
 <!--  below, add squid/flounder after sessions is enabled -->  
- <p> current_user.name </p>
+ 	<p> current_user.name </p>
 </div>
 <div>
-  <span>Start Date</span>
   <%= form.label :start_date %><br>
-  <%= form.date_field :start_date %>
+ 	<%= form.date_field :start_date %>
 </div>
 <div>
-  <span>End Date</span>
   <%= form.label :end_date %><br>
-  <%= form.date_field :end_date %>
+ 	<%= form.date_field :end_date %>
 </div>
