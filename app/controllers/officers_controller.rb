@@ -2,10 +2,6 @@ class OfficersController < ApplicationController
 
 
 	def index
-
-	end
-
-	def index
 		# setting @officer to the officer currently logged in from the current_user method
 		# from the applications controller
 		# @officer = current_user
