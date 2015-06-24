@@ -35,18 +35,18 @@ class StudentsController < ApplicationController
 
 private
 
-def students_page?
-  student = Student.find(params[:id])
-  is_student? && student == current_user
-end
+  def students_page?
+    student = Student.find(params[:id])
+    is_student? && student == current_user
+  end
 
-def student_params
-  params.require(:student).permit(:name, :email, :phone_number, :city, :state, :password_digest, :skills, :is_employed, :employment_date, :company_name, :status, :survey_complete)
-end
+  def student_params
+    params.require(:student).permit(:name, :email, :phone_number, :city, :state, :password_digest, :skills, :is_employed, :employment_date, :company_name, :status, :survey_complete)
+  end
 
-def logged_in?
-  !current_user.nil?
-end
+  def logged_in?
+    !current_user.nil?
+  end
 
 
 end
