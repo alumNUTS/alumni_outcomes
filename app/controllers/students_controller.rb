@@ -4,8 +4,8 @@ class StudentsController < ApplicationController
   helper_method :students_page?
   def show
     if logged_in?
-      if is_student? && (current_user.id != params[:id].to_i)
-        redirect_to '/'
+      if is_student? && (!current_user.cohort.students.exists?(params[:id]))
+        redirect_to "/students/#{session[:user_id]}"
       else
         @student = Student.find(params[:id])
       end
