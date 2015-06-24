@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      if Student.exists?(:email => session[:user_email])
+      if session[:user_type] == "student"
         @current_user ||= Student.find(session[:user_id])
       else
         @current_user ||= Officer.find(session[:user_id])
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_student?
-    Student.exists?(:email => current_user.email)
+    session[:user_type] == "student"
   end
 
 
