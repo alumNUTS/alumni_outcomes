@@ -4,9 +4,12 @@
 	<% @cohorts.each do |cohort| %>
 	<li>
 		<a href="/cohorts/<%= cohort.id %>"><%= cohort.name %></a>
-		<%= cohort.id %> <%= cohort.start_date %>
-		<%= cohort.id %> <%= cohort.end_date %>
-		<%= cohort.id %> <%= cohort.officer_id %>
+		<br>
+		<span>Start Date: </span><%= cohort.start_date %>
+		<br>
+		<span>End Date: </span><%= cohort.end_date %>
+		<br>
+		<span>Officer: </span><%= cohort.officer.name %>
 	<% end %>
 	</li>
 </ul>
