@@ -1,16 +1,17 @@
 class OfficersController < ApplicationController
 
-	def index
-		# setting @officer to the officer currently logged in from the current_user method
-		# from the applications controller
-		# @officer = current_user
+	def show
+		# setting @officer to the officer currently logged in
+		@officer = Officer.find(params[:id])
 
-
-		# If we want to view the cohorts in the index view along with an employment percentage 
-		# to stored in cohort_stats
+		# If we want to view the cohorts in the show view along with an employment percentage 
+		# to store in cohort_stats
 		students = Student.all
-		cohorts = Cohort.all
+		# Selecting only the cohorts that belong to that officer
+		cohorts = Cohort.where(officer_id: params[:id])
+		# Establighing an empty array to store cohort statistics
 		@cohort_stats = []
+		# Filling cohort statistics with relevant information
 		cohorts.each do |cohort|
 			@cohort_stats << {
 				id: cohort.id,
