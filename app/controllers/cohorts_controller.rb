@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
 
+  before_action :authorize, except: [:show]
 	def index
 
 		@cohorts = Cohort.all
@@ -12,7 +13,11 @@ class CohortsController < ApplicationController
 	end
 
 	def new
-		@cohort = Cohort.new
+    if !is_student?
+		  @cohort = Cohort.new
+    else
+      redirect_to '/'
+    end
 	end
 
 	def create

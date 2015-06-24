@@ -1,5 +1,6 @@
 class OfficersController < ApplicationController
 
+
 	def show
 		if !is_student?
 			# setting @officer to the officer currently logged in
