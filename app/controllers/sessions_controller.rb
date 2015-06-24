@@ -13,14 +13,15 @@ class SessionsController < ApplicationController
     if student != nil
       user = student
       path = "/students/#{user.id}"
+      session[:user_type] = :student
     elsif officer != nil
       user = officer
       path = "/officers/#{user.id}"
+      session[:user_type] = :officer
     end
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      session[:user_email] = user.email
       redirect_to path
 
     else
@@ -30,7 +31,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    session[:user_email] = nil
+    session[:user_type] = nil
     redirect_to '/login'
   end
 end

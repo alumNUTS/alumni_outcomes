@@ -10,6 +10,13 @@ class StudentsController < ApplicationController
     end
   end
 
+  def index
+    @students = Student.all
+    if session[:user_type] == 'student'
+      redirect_to "/students/#{session[:user_id]}"
+    end
+  end
+
   def new
     @student = Student.new
     @cohorts = Cohort.all
