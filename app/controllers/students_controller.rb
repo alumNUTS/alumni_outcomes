@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   def show
     if logged_in?
       @student = Student.find(params[:id])
+      binding.pry
     else
       redirect_to '/'
     end

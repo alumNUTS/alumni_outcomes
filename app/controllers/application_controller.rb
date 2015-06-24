@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
     students.each do |student|
       if (Date.today - student.cohort.end_date) > 0
         student.status = "outcome"
+        student.save
       end
     end
   end
@@ -24,6 +25,7 @@ class ApplicationController < ActionController::Base
     students.each do |student|
       if student.is_employed && student.survey_complete
         student.status = "alumnus"
+        student.save
       end
     end
   end
