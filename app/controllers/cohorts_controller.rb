@@ -1,7 +1,7 @@
 class CohortsController < ApplicationController
 
 	def index
-	
+
 		@cohorts = Cohort.all
 		render :index
 	end
@@ -26,7 +26,7 @@ class CohortsController < ApplicationController
 
     if @cohort.save
       redirect_to "/officers"
-    else 
+    else
       render :new
     end
 	end
