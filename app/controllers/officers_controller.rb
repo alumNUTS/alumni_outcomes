@@ -25,6 +25,13 @@ class OfficersController < ApplicationController
 		end
 
 
+<<<<<<< HEAD
+=======
+	def index
+		@students = Student.all
+		@classes = Cohort.all
+		render :index
+>>>>>>> 639ee87ff763a6e293e103e4903710899e58c312
 	end
 
 end
