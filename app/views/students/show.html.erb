@@ -6,11 +6,14 @@
 <p>Cohort: <%= @student.cohort.name %></p>
 <p>Officer: <%= @student.cohort.officer.name %>
 <p>Email: <%= @student.email %></p>
-<p>Phone number: <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %></p>
+<p>Phone number: <% if @student.phone_number != nil %>
+    <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %>
+  <% end %>
+</p>
 <p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
 <% if @student.is_employed %>
   <p>EMPLOYED</p>
-  <p>Company: <%= @student.company %></p>
+  <p>Company: <%= @student.company_name %></p>
   <p>Started: <%= @student.employment_date %></p>
 <% else %>
   <p>UNEMPLOYED</p>
