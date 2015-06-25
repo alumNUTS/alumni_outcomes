@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
         path = "/officers/#{user.id}"
         session[:user_type] = :officer
       end
+      binding.pry
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to path
