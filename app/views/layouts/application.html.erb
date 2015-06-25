@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if request.fullpath != "/" && request.fullpath != "/login"%>
+<% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
   <% if is_student? %>
     <%= link_to "Home", student_path(current_user) %>
   <% else %>
