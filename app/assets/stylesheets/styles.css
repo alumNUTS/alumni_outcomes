@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+
+.loginheader{
+height: 300px;
+margin: 0;
+padding: 0;
+background: #FEDD91;
+text-align: center;
+}
+
+.mainheader{
+height: 140px;
+margin: 0;
+padding: 0;
+background: #FEDD91;
+text-align: center;
+}
+
+.image{
+	margin: -20px;
+}
+
+.mainlogo{
+	margin: -10px;
+}
+
+body {
+	margin: 0;
+	background: #FF5334;
+}
+
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	color: #272822;
+}
+
+.login {
+	padding: 30px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+#email, #password{
+	width: 324px;
+	border: none;
+	height: 20px;
+	margin-bottom:20px;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #5A5A5A;
+}
+
+.options_from_collection_for_select{
+	width: 324px;
+	border: none;
+	height: 20px;
+	margin-bottom:20px;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #5A5A5A;
+}
+
+.skillsbox{
+	width: 324px;
+	border: none;
+	height: 80px;
+	margin-bottom:20px;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #5A5A5A;
+}
+
+.checkbox{
+width: 25px;
+height: 25px;
+}
+
+#cohortbox{
+	font-size: 40px;
+}
+
+label{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	color: #272822;
+}
+
+.submit{
+	border: none;
+	background-color: #CC2014;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	width: 346px;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #272822;
+}
+
+.newstudent{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	color: #FEDD91;
+}
+
+.signup_form{
+text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+
+}
+
+
+footer{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	padding: 40px;
+	text-align: center;
+}
+
