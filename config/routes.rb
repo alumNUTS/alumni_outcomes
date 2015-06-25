@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :students
   resources :officers do
 	  resources :cohorts
+	  resources :analytics
 	end
 
 	resources :cohorts, only: [:show, :index]

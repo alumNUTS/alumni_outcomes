@@ -1,0 +1,23 @@
+<h1>
+	<%= "Welcome to the #{@cohort.name} cohort page" %>
+</h1>
+<small><%=@message%></small>
+
+<!-- This is how we pass the controller data to the client -->
+<%= content_tag :div, class: 'cohort_statistics', data:{ cohort: @cohort, students: @students, days: @days, grad: @grad } do %>
+<% end %>
+
+
+<canvas id="myPieChart" width="200" height="200" style="float: left;">
+</canvas>
+
+<!-- These styles will be overwritten from CSS files -->
+<!-- This is the animated employment percentage-->
+<div class="percent" style="float:left;font-size: 100px;color: #f0553a;">
+</div>
+
+
+<canvas id="myLineChart" width="400" height="200">
+</canvas>
+<%= javascript_include_tag 'chart' %>
+<%= javascript_include_tag 'analytics' %>
