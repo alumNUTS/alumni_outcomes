@@ -8,10 +8,12 @@
   <%= form.label :email %><br>
   <%= form.email_field :email %>
 </div>
-<% if @student.id == nil %>
-  <%= form.label "password" %><br>
-  <%= form.password_field :password_digest %>
-<% end %>
+  <%= form.label "Password" %><br>
+  <%= form.password_field :password %>
+</div>
+<div>
+  <%= form.label "Confirm password" %><br>
+  <%= form.password_field :password_confirmation %>
 </div>
 <div>
   <%= form.label :cohort_id %><br>
