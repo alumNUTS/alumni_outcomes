@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  get '/send_survey/:id' => 'officers#send_survey'
 
 
-  resources :students
+  resources :students do
+    resources :surveys
+  end
+
   resources :officers do
 	  resources :cohorts
 	end

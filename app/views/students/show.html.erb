@@ -1,5 +1,5 @@
 <%= link_to 'View cohort', @student.cohort %>
-<a href="#">Send email</a>
+<a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
 <h1><%= @student.name %></h1>
 <p><%= @student.status %></p>
 <%= image_tag gravatar_url(@student.email, '100x100') %>
@@ -10,7 +10,7 @@
 <p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
 <% if @student.is_employed %>
   <p>EMPLOYED</p>
-  <p>Company: <%= @student.company %></p>
+  <p>Company: <%= @student.company_name %></p>
   <p>Started: <%= @student.employment_date %></p>
 <% else %>
   <p>UNEMPLOYED</p>
@@ -27,7 +27,7 @@
   <% if @student.survey_complete %>
     COMPLETED
   <% else %>
-    PENDING <a href="#">Take a survey</a>
+    PENDING <%= link_to 'Take a survey', student_surveys_path(@student)%>
   <% end %>
   </p>
 <% end %>

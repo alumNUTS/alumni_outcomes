@@ -14,7 +14,11 @@
 			<br>
 			<small><%="Gratuated: #{cohort[:day_graduated]}"%></small>
 			<br>
-			<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
+			<% if !is_hundred_days?(cohort[:id]) %>
+				<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
+			<% else %>
+				<small><a href="/send_survey/<%=cohort[:id]%>">Send Survey</a></small>
+			<% end %>
 		</li>
 		<%end%>
 	</ul>

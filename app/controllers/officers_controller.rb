@@ -36,4 +36,12 @@ class OfficersController < ApplicationController
 			redirect_to '/'
 		end
 	end
+
+	def send_survey
+		cohort = Cohort.find(params[:id])
+		cohort.students.each do |student|
+			UserMailer.welcome_email(student).deliver_now
+		end
+		redirect_to "/officers/#{current_user.id}"
+	end
 end
