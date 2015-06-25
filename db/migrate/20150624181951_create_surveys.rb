@@ -3,7 +3,7 @@ class CreateSurveys < ActiveRecord::Migration
     create_table :surveys do |t|
     	t.string    "name"
     	t.integer		"web_dev_type"
-	    t.boolean   "employment_status"
+	    t.boolean   "is_employed"
 	    t.integer   "position_type"
 	    t.boolean		"found_thru_outcomes"
 	    t.string		"company"

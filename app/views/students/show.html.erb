@@ -1,3 +1,13 @@
+<div class="notice_survey">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <div class="inside_notice">
+        <p><%= flash[:notice] %></p>
+        <button class="close_survey">Close</button>
+      </div>
+    </div>
+  <% end %>
+</div> 
 <%= link_to 'View cohort', @student.cohort %>
 <a href="#">Send email</a>
 <h1><%= @student.name %></h1>
@@ -42,6 +52,8 @@
   <%= submit_tag 'Delete profile' %>
 
 <% end %>
+
+<%= javascript_include_tag 'main' %>
 
 
 

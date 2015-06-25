@@ -1,9 +1,12 @@
+<p><%= @error %></p>
 <h1>Survey</h1>
 
-<%= form_for @survey do |form| %>
+<%= form_for student_surveys_path(@student) do |form| %>
   <%= render form %>
   <div class="actions">
-    <%= form.submit 'Submit' %>
+    <div class="submit_survey"><%= form.submit 'Submit' %></div>
   </div>
 <% end %>
+
+
 

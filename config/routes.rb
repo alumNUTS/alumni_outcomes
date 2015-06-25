@@ -7,11 +7,10 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   post '/cohorts/sort' => 'cohorts#sort'
 
-
-  resources :students
+  resources :students do
+    resources :surveys
+  end
   
-  resources :surveys
-
   resources :officers do
 	  resources :cohorts
 	  resources :analytics
