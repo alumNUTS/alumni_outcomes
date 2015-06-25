@@ -6,9 +6,9 @@ Officer.destroy_all
 Cohort.destroy_all
 
 Officer.create([
-  {name: 'Kyle Lee', email: 'kyle@example.com', password: 'password'},
-  {name: 'Kevin Vinokur', email: 'kevin@example.com', password: 'password'},
-  {name: 'Michele Cruz', email: 'michele@example.com', password: 'password'}
+  {name: 'Kyle Lee', email: 'kyle@example.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO"},
+  {name: 'Kevin Vinokur', email: 'kevin@example.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO"},
+  {name: 'Michele Cruz', email: 'michele@example.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO"}
   ])
 
 Cohort.create([
@@ -22,38 +22,38 @@ Cohort.create([
   ])
 
 Student.create([
-  {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Mark Paulson', email: 'markpaulson1@hotmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Orin Xie', email: 'orin.xie@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Andrew Garver', email: 'a.w.garver@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Anila Alexander', email: 'anila.j.alexander@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Ben Sayeg', email: 'bensayeg@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Bryant Novas', email: 'bryant.novas@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'David Neuhaus', email: 'neuhaus87@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Devatha Kesarkodigae', email: 'k.n.devs@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Dor Rubin', email: 'kdor.rubin@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Fernanda Correa', email: 'nandasc@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Gabriella Lubliner', email: 'gabriella.lubliner@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Gordon DuGan', email: 'gordon.dugan2@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'James Kim', email: 'khkim1776@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Jeremy Bell', email: 'jeremyianbell@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Junho Rhee', email: 'juno0628@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Karlyce Edwards', email: 'karlyce.edwards@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Kelly Stevens', email: 'kllystvns@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Kelly Devine', email: 'kellyd813@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Mark Paulson', email: 'kmarkpaulson1@hotmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Max Peterson', email: 'petersonmaxr@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Michael Dennis', email: 'pmichaelsdennis4@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Orlando arana', email: 'porlandoarana@hotmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Ryan Burke', email: 'ryaneburke@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Sam Xiali Hu', email: 'samuelhuxiali@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Sam Xiali Hu', email: 'samuelhuxiali@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Toshia Harold', email: 'toshia@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Eric Gilley', email: 'eric@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Jacinta Jusino', email: 'jacinta@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Jacinta Jusino', email: 'jacinta@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Mindi Whittemore', email: 'mindi@gmail.com', password: 'password', city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'}
+  {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Mark Paulson', email: 'markpaulson1@hotmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Orin Xie', email: 'orin.xie@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Andrew Garver', email: 'a.w.garver@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Anila Alexander', email: 'anila.j.alexander@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Ben Sayeg', email: 'bensayeg@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Bryant Novas', email: 'bryant.novas@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'David Neuhaus', email: 'neuhaus87@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Devatha Kesarkodigae', email: 'k.n.devs@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Dor Rubin', email: 'kdor.rubin@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Fernanda Correa', email: 'nandasc@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Gabriella Lubliner', email: 'gabriella.lubliner@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Gordon DuGan', email: 'gordon.dugan2@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 3, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'James Kim', email: 'khkim1776@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Jeremy Bell', email: 'jeremyianbell@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Junho Rhee', email: 'juno0628@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Karlyce Edwards', email: 'karlyce.edwards@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 4, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Kelly Stevens', email: 'kllystvns@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Kelly Devine', email: 'kellyd813@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Mark Paulson', email: 'kmarkpaulson1@hotmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Max Peterson', email: 'petersonmaxr@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 5, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Michael Dennis', email: 'pmichaelsdennis4@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Orlando arana', email: 'porlandoarana@hotmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Ryan Burke', email: 'ryaneburke@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Sam Xiali Hu', email: 'samuelhuxiali@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Sam Xiali Hu', email: 'samuelhuxiali@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 6, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Toshia Harold', email: 'toshia@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Eric Gilley', email: 'eric@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Jacinta Jusino', email: 'jacinta@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Jacinta Jusino', email: 'jacinta@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Mindi Whittemore', email: 'mindi@gmail.com', password_digest: "$2a$10$D2d89TIu46ek7drA48t2Duuy32lMQTpK.fF4EEZ/DEGHR7oVeleNO", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'}
   ])
 

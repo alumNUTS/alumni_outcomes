@@ -19,12 +19,11 @@ class SessionsController < ApplicationController
         path = "/officers/#{user.id}"
         session[:user_type] = :officer
       end
-
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         redirect_to path
       else
-        redirect_to '/login'
+        redirect_to '/login', notice: "Invalid login"
       end
     else
       @error = "Please log out first"

@@ -1,7 +1,7 @@
 <h1>Student Sign-up Form</h1>
 <ul>
-  <% @student.errors.each do |field, message| %>
-    <li><%= field %> <%= message %></li>
+  <% @student.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
   <% end %>
 </ul>
 <%= form_for @student do |form| %>

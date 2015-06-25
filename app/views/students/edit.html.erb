@@ -1,9 +1,11 @@
 <h1>Edit your Information</h1>
-<ul>
-<% @student.errors.each do |field, message| %>
-  <li><%= field %> <%= message %></li>
-<% end %>
-</ul>
+  <% if @student.errors.any? %>
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
 <%= form_for @student do |form| %>
   <%= render form %>
   <div class="actions">

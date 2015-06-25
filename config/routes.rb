@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 	  resources :cohorts
 	end
 
-	resources :cohorts, only: [:show]
+	resources :cohorts, only: [:show, :index]
 
 end
