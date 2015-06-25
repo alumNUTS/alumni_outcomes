@@ -1,6 +1,7 @@
 <%= link_to 'View cohort', @student.cohort %>
 <a href="#">Send email</a>
 <h1><%= @student.name %></h1>
+<%= notice %>
 <p><%= @student.status %></p>
 <%= image_tag gravatar_url(@student.email, '100x100') %>
 <p>Cohort: <%= @student.cohort.name %></p>

@@ -1,9 +1,15 @@
-<h1>Survey</h1>
+<%= if @student.survey_complete != true
 
-<%= form_for @survey do |form| %>
-  <%= render form %>
-  <div class="actions">
-    <%= form.submit 'Submit' %>
-  </div>
+	<h1>Survey</h1>
+
+	<%= form_for student_surveys_path(@student) do |form| %>
+	  <%= render form %>
+	  <div class="actions">
+	    <%= form.submit 'Submit' %>
+	  </div>
+	<% end %>
+
+	<% else %>
+	<p> <% Uh oh. You can only submit this survey once.%> </p> 
+
 <% end %>
-

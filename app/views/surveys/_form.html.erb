@@ -1,77 +1,77 @@
 <div>
-  <span>Name</span>
+  <span>Your name</span>
   <%= form.text_field :name %>
 </div>
-	
+<br>
 <div>
-  <span>1. What type of web developer are you?</span>
+  <span>1. What type of web developer are you?</span><br>
   <%= form.radio_button :web_dev_type, 1 %>Full-Stack
   <%= form.radio_button :web_dev_type, 2 %>Front-End
   <%= form.radio_button :web_dev_type, 3 %>Back-End
 </div>
-
+<br>
 <div>
-  <span>2. What’s your current employment status?</span>
-  <%= form.radio_button :employment_status, true %>Employed
-  <%= form.radio_button :employment_status, false %>Not Employed
+  <span>2. What’s your current employment status?</span><br>
+  <%= form.radio_button :is_employed, true %>Employed
+  <%= form.radio_button :is_employed, false %>Not Employed
 </div>
-
+<br>
 <div>
 	<p>(If not employed, skip to question #5)<p>
 </div>
-
+<br>
 <div>
-  <span>3. What best describes your position?</span>
+  <span>3. What best describes your position?</span><br>
   <%= form.radio_button :position_type, 1 %>Full-time
   <%= form.radio_button :position_type, 2 %>Temp-to-Perm
   <%= form.radio_button :position_type, 3 %>Freelance
 </div>
-
+<br>
 <div>
-  <span>4. Did you find the position through our Outcomes Program?</span>
+  <span>4. Did you find the position through our Outcomes Program?</span><br>
   <%= form.radio_button :found_thru_outcomes, true %>Yes
   <%= form.radio_button :found_thru_outcomes, false %>No
 </div>
-
+<br>
 <div>
   <span>5. Please share your Company Name</span>
-  <%= form.text_field :company %>
+  <%= form.text_field :company %><br>
   <span>and your Start Date</span>
   <%= form.date_field :employment_date %>
 </div>
-
+<br>
 <div>
-  <span>6. The technical skills I learned during my immersive course has properly prepared me for real-life work environments.</span>
-  <%= form.radio_buttons :enough_preparation, 1 %>I disagree
-  <%= form.radio_buttons :enough_preparation, 2 %>I somewhat disagree
-  <%= form.radio_buttons :enough_preparation, 3 %>Neutral feelings
-  <%= form.radio_buttons :enough_preparation, 4 %>I somewhat agree
-  <%= form.radio_buttons :enough_preparation, 5 %>I completely agree
+  <span>6. The technical skills I learned during my immersive course has properly prepared me for real-life work environments.</span><br>
+  <%= form.radio_button :enough_preparation, 1 %>I disagree
+  <%= form.radio_button :enough_preparation, 2 %>I somewhat disagree
+  <%= form.radio_button :enough_preparation, 3 %>Neutral feelings
+  <%= form.radio_button :enough_preparation, 4 %>I somewhat agree
+  <%= form.radio_button :enough_preparation, 5 %>I completely agree
 </div>
-
+<br>
 <div>
-  <span>7. How would you rate the effectiveness of your Officer’s involvement in your job search preparation and actual job search?</span>
-  <%= form.radio_buttons :officer_effectiveness, 1 %>Ineffective
-  <%= form.radio_buttons :officer_effectiveness, 2 %>Somewhat effective
-  <%= form.radio_buttons :officer_effectiveness, 3 %>Stellar!
+  <span>7. How would you rate the effectiveness of your Officer’s involvement in your job search preparation and actual job search?</span><br>
+  <%= form.radio_button :officer_effectiveness, 1 %>Ineffective
+  <%= form.radio_button :officer_effectiveness, 2 %>Somewhat effective
+  <%= form.radio_button :officer_effectiveness, 3 %>Stellar!
 </div>
-
+<br>
 <div>
 	<p>Tell us in your own words:<p>
 </div>   
-
+<br>
 <div>
-  <span>8. What hard/soft skills that you didn’t learn while at GA would have better prepared you post-graduation, whether or not you’ve already found a job.</span>
+  <span>8. What hard/soft skills that you didn’t learn while at GA would have better prepared you post-graduation, whether or not you’ve already found a job.</span><br>
   <%= form.text_field :should_have_learned %>
 </div>    
-
+<br>
 <div>
-  <span>9. If you’re currently not employed, what are some hurdles you’ve encountered during your job search?</span>
+  <span>9. If you’re currently not employed, what are some hurdles you’ve encountered during your job search?</span><br>
   <%= form.text_field :hurdles %>
 </div> 
-
+<br>
 <div>
-  <span>10. Anything else you want to say?</span>
+  <span>10. Anything else you want to say?</span><br>
   <%= form.text_field :anything_else %>
 </div> 
 
