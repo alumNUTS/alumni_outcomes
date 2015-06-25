@@ -1,14 +1,18 @@
+<header class="loginheader">
+<%= image_tag "ALUMNUTS.svg", size: "850x350", class: 'image' %>
+</header>
 
-
-<h1>Login</h1>
+<div class="login">
+<h1>Sign In</h1>
 <%= @error %>
 <p id="notice"><%= notice %></p>
 <%= form_tag '/login' do %>
-	<%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Login" %>
+	<%= label_tag(:label, "Enter Email") %><br>
+  <%= text_field_tag :email %><br>
+  <%= label_tag :label, "Enter Password" %><br>
+  <%= password_field_tag :password %><br>
+  <%= submit_tag "Sign In", class: 'submit' %>
 <% end %>
 
-<a href="/students/new">Create New Student</a>
+<a href="/students/new" class="newstudent">Create New Student</a>
+</div>

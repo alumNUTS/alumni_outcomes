@@ -12,9 +12,10 @@
 	<% @cohort.students.each do |student| %>
 	<li>
 		<a href="/students/<%= student.id %>"><%= student.name %></a>
-		<% end %>
 	</li>
+		<% end %>
 </ul>
 
 
+<a href="officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
 
