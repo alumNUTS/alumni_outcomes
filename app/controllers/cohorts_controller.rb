@@ -1,16 +1,33 @@
 class CohortsController < ApplicationController
 
+
+  before_action :authorize, except: [:show]
+
 	def index
 		@cohorts = Cohort.all
 		render :index
 	end
 
 	def show
-		@cohort = Cohort.find(params[:id])
+
+
+    if is_student? && (current_user.cohort.id != params[:id].to_i)
+      redirect_to "/students/#{current_user.id}"
+    else
+      @cohort = Cohort.find(params[:id])
+      @students = Student.where(cohort_id: @cohort.id)
+    end
+
+
 	end
 
 	def new
-		@cohort = Cohort.new
+    if !is_student?
+  		@cohort = Cohort.new
+      @officer = Officer.find(session[:user_id])
+    else
+      redirect_to '/'
+    end
 	end
 
 	def create
@@ -23,8 +40,8 @@ class CohortsController < ApplicationController
     @cohort.end_date = params["cohort"]["end_date"]
 
     if @cohort.save
-      redirect_to "/officers"
-    else 
+      redirect_to "/officers/#{session[:user_id]}"
+    else
       render :new
     end
 	end

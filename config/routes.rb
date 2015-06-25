@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+
   resources :students
-  resources :officers
-  resources :cohorts
   resources :surveys
+
+  resources :officers do
+	  resources :cohorts
+	end
+
+	resources :cohorts, only: [:show]
 
 end

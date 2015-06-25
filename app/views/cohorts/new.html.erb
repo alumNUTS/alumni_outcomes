@@ -1,6 +1,6 @@
 <h1>Create a New Cohort</h1>
 
-<%= form_for @cohort do |form| %>
+<%= form_for  [@officer, @cohort] do |form| %>
   <%= render form %>
   <div class="actions">
     <%= form.submit 'Submit' %>

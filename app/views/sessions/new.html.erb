@@ -1,4 +1,7 @@
+
+
 <h1>Login</h1>
+<%= @error %>
 <%= form_tag '/login' do %>
 	<%= label_tag :email %>
   <%= text_field_tag :email %>
@@ -7,4 +10,4 @@
   <%= submit_tag "Login" %>
 <% end %>
 
-<!-- Session id: <%= session[:student_id] %> -->
+<a href="/students/new">Create New Student</a>
