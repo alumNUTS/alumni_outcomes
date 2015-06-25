@@ -1,6 +1,5 @@
 <h1>Data about <%= @cohort.name %> </h1>
 <div>
-
 	<span>Cohort Name: </span><%= @cohort.name %> <br>
 	<span>Start Date: </span><%= @cohort.start_date %> <br>
 	<span>End Date: </span><%= @cohort.end_date %> <br>
@@ -12,12 +11,13 @@
 
 <h3>Students</h3>
 <ul>
-	<% @students.each do |student| %>
+	<% @cohort.students.each do |student| %>
 	<li>
 		<a href="/students/<%= student.id %>"><%= student.name %></a>
-		<% end %>
 	</li>
+		<% end %>
 </ul>
 
 
+<a href="officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
 

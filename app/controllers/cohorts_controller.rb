@@ -4,7 +4,11 @@ class CohortsController < ApplicationController
   before_action :authorize, except: [:show]
 
 	def index
-		@cohorts = Cohort.all
+		if $sort != nil
+      @cohorts = Cohort.order("#{$sort} ASC")
+    else
+      @cohorts = Cohort.all
+    end
 		render :index
 	end
 
@@ -17,6 +21,7 @@ class CohortsController < ApplicationController
       @students = Student.where(cohort_id: @cohort.id)
 
     end
+
 
 	end
 
@@ -44,6 +49,11 @@ class CohortsController < ApplicationController
       render :new
     end
 	end
+
+  def sort
+    $sort = params[:sort_by]
+    redirect_to "/cohorts"
+  end
 
 end
 

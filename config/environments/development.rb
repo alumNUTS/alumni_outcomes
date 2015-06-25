@@ -38,6 +38,12 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+  config.assets.precompile += %w( chart.js )
+
+  config.assets.precompile += %w( analytics.js )
+
+  config.assets.precompile += %w( main.js )
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.

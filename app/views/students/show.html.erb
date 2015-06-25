@@ -1,3 +1,13 @@
+<div class="notice_survey">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <div class="inside_notice">
+        <p><%= flash[:notice] %></p>
+        <button class="close_survey">Close</button>
+      </div>
+    </div>
+  <% end %>
+</div> 
 <%= link_to 'View cohort', @student.cohort %>
 <a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
 <h1><%= @student.name %></h1>
@@ -6,7 +16,10 @@
 <p>Cohort: <%= @student.cohort.name %></p>
 <p>Officer: <%= @student.cohort.officer.name %>
 <p>Email: <%= @student.email %></p>
-<p>Phone number: <%= @student.phone_number %></p>
+<p>Phone number: <% if @student.phone_number != nil %>
+    <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %>
+  <% end %>
+</p>
 <p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
 <% if @student.is_employed %>
   <p>EMPLOYED</p>
@@ -39,6 +52,8 @@
   <%= submit_tag 'Delete profile' %>
 
 <% end %>
+
+<%= javascript_include_tag 'main' %>
 
 
 

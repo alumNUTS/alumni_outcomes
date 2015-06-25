@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
   get '/send_survey/:id' => 'officers#send_survey'
+  post '/cohorts/sort' => 'cohorts#sort'
 
 
   resources :students do
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :officers do
 	  resources :cohorts
+	  resources :analytics
 	end
 
 	resources :cohorts, only: [:show, :index]
