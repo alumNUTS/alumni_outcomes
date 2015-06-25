@@ -7,7 +7,7 @@ class SurveysController < ApplicationController
 	end
 
 	def create
-    # if current_user.id != params[:student_id]
+    if current_user.id != params[:student_id]
   		@survey = Survey.new
       
       if @survey.save
@@ -20,11 +20,11 @@ class SurveysController < ApplicationController
         @student = Student.find(params[:student_id])
     		render :index
     	end
-  #   else
-  #     @student = Student.find(params[:student_id])
-  #     @error = "Are you NUTS? This isn't your survey"
-  #     render :index
-  #   end
+    else
+      @student = Student.find(params[:student_id])
+      @error = "Are you NUTS? This isn't your survey"
+      render :index
+    end
    end
 
 end
