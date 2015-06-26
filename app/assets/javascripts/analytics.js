@@ -32,8 +32,12 @@
 	]
 
 
-	if (daysGraduated > 90){
-		var xValues = 9;
+	// This variable can be used to dynamically change the 
+	// The dataset over days
+	var xAxisDays = 90;
+
+	if (daysGraduated > xAxisDays){
+		var xValues = xAxisDays/10;
 	} else {
 		var xValues = Math.floor(daysGraduated/10);
 	}
@@ -46,18 +50,19 @@
 
 	// Filling studentEmployment array with 0's
 	var studentEmployment = [];
-	for(var i = 0; i <= xAxis.length; i++){
+	for(var i = 0; i < xAxis.length; i++){
 		studentEmployment.push(0);
 	}
 
 	// Filling studentEmployment array with percentage of employed students over time
-	for(var i = 1; i <= xAxis.length; i++){
+	for(var i = 1; i < xAxis.length; i++){
 		for(var j = 0; j < employmentStats.length; j++){
 			if(employmentStats[j] <= xAxis[i]){
 				studentEmployment[i]++;
 			}
 		}
 		studentEmployment[i] = Math.floor((studentEmployment[i] / students.length) * 100 );
+		xAxis[i] = xAxis[i] + " Days"
 	}
 
 	var lineData = {
@@ -66,7 +71,7 @@
 			{
 				label: "Employment over Time",
 				fillColor: "#ffffff",
-        strokeColor: "#f0553a",
+        strokeColor: "#ffde8c",
         pointColor: "rgba(220,220,220,1)",
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
