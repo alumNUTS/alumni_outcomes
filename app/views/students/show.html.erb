@@ -9,7 +9,9 @@
   <% end %>
 </div>
 <%= link_to 'View cohort', @student.cohort %>
-<a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
+<% if students_page? %>
+  <a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
+<% end %>
 <h1><%= @student.name %></h1>
 <p><%= @student.status %></p>
 <%= image_tag gravatar_url(@student.email, '100x100') %>
@@ -54,6 +56,4 @@
 <% end %>
 
 <%= javascript_include_tag 'main' %>
-
-
 

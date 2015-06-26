@@ -30,7 +30,7 @@ class OfficersController < ApplicationController
 						students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
 						)/students.where(cohort_id: cohort.id).count.to_f,
 					day_graduated: cohort.end_date,
-					days_til_survey: (cohort.end_date + 100 - Date.today).to_i
+						days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
 			end
 		else

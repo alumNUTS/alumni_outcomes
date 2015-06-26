@@ -18,6 +18,13 @@ background: #FEDD91;
 text-align: center;
 }
 
+.load{
+	display:none;
+	z-index: 9999999;
+	position: absolute;
+	left: 40%;
+	top: 28%;
+}
 .image{
 	margin: -20px;
 }

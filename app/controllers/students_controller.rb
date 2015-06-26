@@ -8,6 +8,10 @@ class StudentsController < ApplicationController
         redirect_to "/students/#{session[:user_id]}"
       else
         @student = Student.find(params[:id])
+        if @student.is_employed && @student.survey_complete
+          @student.status = "alumnus"
+          @student.save
+        end
       end
     else
       redirect_to '/'
@@ -39,15 +43,14 @@ class StudentsController < ApplicationController
   end
 
 	def edit
-		@student = Student.find(params[:id])
+		@student = Student.find(session[:user_id])
     @cohorts = Cohort.all
 	end
 
   def update
-    @student = Student.find(params[:id])
+    @student = Student.find(session[:user_id])
 
 	  if @student.update(student_params)
-
 		  redirect_to @student
 	  else
       @cohorts = Cohort.all

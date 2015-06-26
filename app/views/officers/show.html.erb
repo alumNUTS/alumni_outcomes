@@ -1,10 +1,12 @@
 <!-- Welcome Current Officer here, is squid with @officer.name to display officer's name -->
 <!-- after sessions controller has been made -->
 <h1>Welcome, <%=@officer.name%></h1>
+<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 <div >
 	<big>My Cohorts:</big>
-	<ul>
+	<ul class="officer_cohorts">
 		<% @cohort_stats.each do |cohort| %>
+		<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
 		<li>
 			<a href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
 				<%= "#{cohort[:name]}" %>
@@ -17,11 +19,12 @@
 			<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
 					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
 			<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-				<small><a href="/send_survey/<%=cohort[:id]%>">Send Survey</a></small>
+				<small><button id="send_survey">Send Survey</button></small>
 			<% else %>
 				<small>Survey's sent</small>
 			<% end %>
 		</li>
+		</div>
 		<%end%>
 	</ul>
 	<%= link_to 'Create cohort', new_officer_cohort_path(@officer) %>

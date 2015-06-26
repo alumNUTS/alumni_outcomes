@@ -5,6 +5,7 @@
 	  <%= render form %>
 	  <div class="actions">
 	    <div class="submit_survey"><%= form.submit 'Submit' %></div>
+      <%= form.submit "clear", :type => "reset" %>
 	  </div>
 	<% end %>
 <% else %>
