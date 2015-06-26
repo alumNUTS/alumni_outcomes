@@ -7,32 +7,41 @@ class SurveysController < ApplicationController
 		      @student = Student.find(params[:student_id])
 		      @survey = Survey.new
         else
-          redirect_to current_user, notice: "Are you NUTS? This isn't your survey"
+          redirect_to current_user, notice: "Are you NUTS? This isn't your survey."
         end
       else
-        redirect_to current_user, notice: "You can complete this survey only 100 days after your graduation"
+        redirect_to current_user, notice: "You can only complete this survey 100 days after your graduation"
       end
     else
-      redirect_to '/login', notice: "Please, log in to complete the survey"
+      redirect_to '/login', notice: "Please log in to complete the survey."
     end
 	end
 
 	def create
     @survey = Survey.new
-    if @survey.save
-      current_user.survey_complete = true
-      current_user.save
-      redirect_to current_user, notice: "You've successfully submitted your survey!"
+    if !params[:survey][:employment_status].nil?
+      if @survey.save
+        current_user.survey_complete = true
+        current_user.is_employed = params[:survey][:employment_status]
+        current_user.save
+        redirect_to current_user, notice: "You've successfully submitted your survey!"
+      else
+        @student = Student.find(params[:student_id])
+        render :new
+      end
     else
       @student = Student.find(params[:student_id])
+      @error = "Employment status can't be blank."
       render :new
     end
   end
 
   def index
+    @cohort = Cohort.find(params[:cohort_id])
   end
 
   def show
+
   end
 
 end

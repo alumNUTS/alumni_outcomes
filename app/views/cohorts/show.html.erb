@@ -5,9 +5,12 @@
 	<span>End Date: </span><%= @cohort.end_date %> <br>
 </div>
 
-<% if !is_student? && is_hundred_days?(@cohort.id) %>
+<% if !is_student? && is_hundred_days?(@cohort.id) && @cohort.survey_sent == true %>
+  <%= link_to 'Survey\'s results', cohort_surveys_path(@cohort) %>
+<% elsif !is_student? && is_hundred_days?(@cohort.id) %>
   <a href="/send_survey/<%=@cohort.id%>">Send Survey</a>
 <% end %>
+
 
 
 

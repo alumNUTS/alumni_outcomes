@@ -1,0 +1,8 @@
+
+<% @cohort.surveys.each do |survey| %>
+  <% if survey.name.nil? %>
+    <%= link_to 'Anonomys', [@cohort, survey] %>
+  <% else %>
+    <%= link_to survey.name, [@cohort, survey] %>
+  <% end %>
+<% end %>

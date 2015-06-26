@@ -11,15 +11,17 @@ Rails.application.routes.draw do
 
 
   resources :students do
-    resources :surveys
+    resources :surveys, only: [:new, :create]
   end
 
   resources :officers do
 	  resources :cohorts
 	  resources :analytics
-    resources :surveys
 	end
 
-	resources :cohorts, only: [:show, :index]
+
+	resources :cohorts, only: [:show, :index] do
+    resources :surveys, only: [:show, :index]
+  end
 
 end

@@ -1,11 +1,7 @@
-<ul>
-  <% @survey.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-</ul>
+<%= @error %>
 <h1>Survey</h1>
 <% if @student.survey_complete != true %>
-	<%= form_for new_student_survey_path(@student) do |form| %>
+	<%= form_for ([@student, @survey]) do |form| %>
 	  <%= render form %>
 	  <div class="actions">
 	    <div class="submit_survey"><%= form.submit 'Submit' %></div>

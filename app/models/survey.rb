@@ -1,5 +1,5 @@
 class Survey < ActiveRecord::Base
-	validates :employment_status, presence: true
+	belongs_to :cohort
 	def web_dev_type_sym
 		case self[:web_dev_type]
 			when 1 then :full_stack
