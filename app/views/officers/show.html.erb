@@ -1,3 +1,27 @@
+<header class="mainheader">
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
+    </div><!-- logoutdiv -->
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
+</header>
+<div class="navbar">
+	</div>
+
 <!-- Welcome Current Officer here, is squid with @officer.name to display officer's name -->
 <!-- after sessions controller has been made -->
 <h1>Welcome, <%=@officer.name%></h1>
