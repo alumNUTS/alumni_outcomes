@@ -12,4 +12,8 @@ class Student < ActiveRecord::Base
 
 	belongs_to :cohort
 
+  def self.search(query)
+    where("name like ?", "%#{query}%") 
+  end
+
 end

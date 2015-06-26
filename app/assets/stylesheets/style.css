@@ -23,7 +23,7 @@
 	height: 200px;
 	position: absolute;
 	right: 100px;
-	top: 10px;
+	top: 50px;
 
 }
 
@@ -32,7 +32,7 @@
 	height: 200px;
 	position: absolute;
 	right: 100px;
-	top: 10px;
+	top: 50px;
 
 }
 
@@ -40,6 +40,7 @@
 	float: left;
 	width: 150px;
 	margin-right: -100px;
+	margin-top: -50px;
 }
 
 #person1, #person2, #person3, #person4, #person5, #person6, #person7, #person8, #person9, #person10, #person11, #person12, #person13, #person14, #person15, #person16, #person17, #person18, #person19, #person20, #person21, #person22, #person23, #person24, #person25, #person26, #person27, #person28, #person29, #person30 {
@@ -47,6 +48,7 @@
 	width: 150px;
 	display: none;
 	margin-right: -100px;
+	margin-top: -50px;
 }
 
 
