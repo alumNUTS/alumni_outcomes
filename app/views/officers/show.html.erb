@@ -1,8 +1,33 @@
+<header class="mainheader">
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
+    </div><!-- logoutdiv -->
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
+</header>
+<div class="navbar">
+</div>
 <h1>Welcome, <%=@officer.name%></h1>
+<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 <div >
 	<big>My Cohorts:</big>
-	<ul>
+	<ul class="officer_cohorts">
 		<% @cohort_stats.each do |cohort| %>
+		<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
 		<li>
 			<a href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
 				<%= "#{cohort[:name]}" %>
@@ -16,7 +41,7 @@
 				<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
 					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
 				<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-					<small><a href="/send_survey/<%=cohort[:id]%>">Send Survey</a></small>
+					<small><button id="send_survey">Send Survey</button></small>
 				<% else %>
 					<small>Survey's sent</small>
 				<% end %>
@@ -28,6 +53,7 @@
 			<% end %>
 			
 		</li>
+		</div>
 		<%end%>
 	</ul>
 	<%= link_to 'Create cohort', new_officer_cohort_path(@officer) %>

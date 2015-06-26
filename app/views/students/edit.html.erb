@@ -1,3 +1,30 @@
+<header class="mainheader">
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
+    </div><!-- logoutdiv -->
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
+</header>
+<div class="navbar">
+  </div>
+
+
+
+<div class='signup_form'>
 
 <h1>Edit your Information</h1>
   <% if @student.errors.any? %>
@@ -10,6 +37,13 @@
 <%= form_for @student do |form| %>
   <%= render form %>
   <div class="actions">
-    <%= form.submit 'Submit Edits!' %>
+    <%= form.submit 'Submit', class: "submit_edit" %>
   </div>
 <% end %>
+
+</div>
+
+
+  <footer>
+    <p>©Copyright AlumNuts LLC</p>
+  </footer>

@@ -1,7 +1,13 @@
+<header class="mainheader">
+		<div class='center'>
+			<%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+		</div><!-- imagediv -->
+</header>
+
 
 <% @cohort.surveys.each do |survey| %>
   <% if survey.name.nil? %>
-    <%= link_to 'Anonomys', [@cohort, survey] %>
+    <%= link_to 'Anonymous', [@cohort, survey] %>
   <% else %>
     <%= link_to survey.name, [@cohort, survey] %>
   <% end %>
