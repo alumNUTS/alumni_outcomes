@@ -33,28 +33,6 @@
   <% end %>
 </div>
 
-<%= link_to 'View cohort', @student.cohort %>
-<% if students_page? %>
-  <a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
-<% end %>
-<h1><%= @student.name %></h1>
-<p><%= @student.status %></p>
-<%= image_tag gravatar_url(@student.email, '100x100') %>
-<p>Cohort: <%= @student.cohort.name %></p>
-<p>Officer: <%= @student.cohort.officer.name %>
-<p>Email: <%= @student.email %></p>
-<p>Phone number: <% if @student.phone_number != nil %>
-    <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %>
-  <% end %>
-</p>
-<p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
-<% if @student.is_employed %>
-  <p>EMPLOYED</p>
-  <p>Company: <%= @student.company_name %></p>
-  <p>Started: <%= @student.employment_date %></p>
-<% else %>
-  <p>UNEMPLOYED</p>
-
 
 <div class="navbar">
 <%= link_to 'View cohort', @student.cohort, class: 'navbar' %>
@@ -135,6 +113,7 @@
   <footer>
     <p>©Copyright AlumNuts LLC</p>
   </footer>
+
 
 
 
