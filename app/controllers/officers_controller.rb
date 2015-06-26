@@ -1,9 +1,6 @@
 class OfficersController < ApplicationController
 
 	# To be used while finding employment rate so we don't have any extra long percentages
-	def truncate_to_two (x)
-	   (x * 100).truncate/100.0	 
-	end
 
 	before_action :authorize
 
@@ -53,3 +50,7 @@ class OfficersController < ApplicationController
 		redirect_to "/officers/#{current_user.id}"
 	end
 end
+
+	def truncate_to_two (x)
+	   (x * 100).truncate/100.0
+	end

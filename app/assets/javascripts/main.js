@@ -18,6 +18,14 @@ $(document).ready(function(){
   })
 
 
+  $(".checkbox").change(function(){
+    if($(".employment_info").is(':visible')){
+      $(".employment_info").hide()
+    } else {
+      $(".employment_info").show()
+    }
+  })
+
 
 	//silhoutte animation
 	var count = 1

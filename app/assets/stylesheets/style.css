@@ -47,6 +47,10 @@
 	margin-top: -50px;
 }
 
+.employment_info{
+	display:none;
+}
+
 #person1, #person2, #person3, #person4, #person5, #person6, #person7, #person8, #person9, #person10, #person11, #person12, #person13, #person14, #person15, #person16, #person17, #person18, #person19, #person20, #person21, #person22, #person23, #person24, #person25, #person26, #person27, #person28, #person29, #person30 {
 	float: left;
 	width: 150px;
