@@ -42,7 +42,11 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @survey = Survey.find(params[:id])
+  end
 
+  def survey_params
+    params.require(:survey).permit(:name, :web_dev_type, :cohort_id, :employment_status, :position_type, :found_thru_outcomes, :company, :employment_date, :enough_preparation, :officer_effectiveness, :should_have_learned, :hurdles, :anything_else)
   end
 
   private

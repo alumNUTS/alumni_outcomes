@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150626032134) do
   create_table "surveys", force: :cascade do |t|
     t.string  "name"
     t.integer "web_dev_type"
-    t.boolean "employment_status"
+    t.boolean "is_employed"
     t.integer "position_type"
     t.boolean "found_thru_outcomes"
     t.string  "company"

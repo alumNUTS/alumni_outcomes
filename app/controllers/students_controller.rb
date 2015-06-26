@@ -19,7 +19,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all
+
+    if params[:search]
+      @students = Student.search(params[:search]).order("created_at DESC")
+    else
+      @students = Student.all
+    end
+
     if session[:user_type] == 'student'
       redirect_to "/students/#{session[:user_id]}"
     end

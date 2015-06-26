@@ -7,19 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
- <div class="logout">
-    <body>
-    <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
-      <% if is_student? %>
-        <%= link_to "Home", student_path(current_user) %>
-      <% else %>
-        <%= link_to "Home", officer_path(current_user) %>
-      <% end %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Logout", logout_path, method: "DELETE" %>
-    <% end %>
-    </div><!-- logoutdiv -->
+
 
 <%= yield %>
 
