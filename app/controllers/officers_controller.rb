@@ -24,6 +24,7 @@ class OfficersController < ApplicationController
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,
+					survey_sent: cohort.survey_sent,
 					name: cohort.name,
 					employed: (
 						students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
@@ -42,6 +43,8 @@ class OfficersController < ApplicationController
 		cohort.students.each do |student|
 			UserMailer.welcome_email(student).deliver_now
 		end
+		cohort.survey_sent = true
+		cohort.save
 		redirect_to "/officers/#{current_user.id}"
 	end
 end

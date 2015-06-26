@@ -1,5 +1,9 @@
 <h1>Create a New Cohort</h1>
-
+ <ul>
+    <% @cohort.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
 <%= form_for  [@officer, @cohort] do |form| %>
   <%= render form %>
   <div class="actions">

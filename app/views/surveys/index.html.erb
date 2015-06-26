@@ -1,14 +1,7 @@
-<p><%= @error %></p>
-<h1>Survey</h1>
-<% if @student.survey_complete != true %>
-	<%= form_for student_surveys_path(@student) do |form| %>
-	  <%= render form %>
-	  <div class="actions">
-	    <div class="submit_survey"><%= form.submit 'Submit' %></div>
-	  </div>
-	<% end %>
-<% else %>
-	<p>  Uh oh...you can only submit this survey once. </p> 
+<% @cohort.surveys.each do |survey| %>
+  <% if survey.name.nil? %>
+    <%= link_to 'Anonomys', [@cohort, survey] %>
+  <% else %>
+    <%= link_to survey.name, [@cohort, survey] %>
+  <% end %>
 <% end %>
-
-

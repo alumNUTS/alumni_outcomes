@@ -7,7 +7,7 @@
       </div>
     </div>
   <% end %>
-</div> 
+</div>
 <%= link_to 'View cohort', @student.cohort %>
 <a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
 <h1><%= @student.name %></h1>
@@ -40,7 +40,7 @@
   <% if @student.survey_complete %>
     COMPLETED
   <% else %>
-    PENDING <%= link_to 'Take a survey', student_surveys_path(@student)%>
+    PENDING <%= link_to 'Take a survey', new_student_survey_path(@student)%>
   <% end %>
   </p>
 <% end %>
