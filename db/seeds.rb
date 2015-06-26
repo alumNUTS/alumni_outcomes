@@ -23,11 +23,12 @@ Cohort.create([
 
 Student.create([
 
-  {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+  {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON', is_employed: true},
+  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON', is_employed: true},
   {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Mark Paulson', email: 'markpaulson1@hotmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Orin Xie', email: 'orin.xie@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
+
   {name: 'Andrew Garver', email: 'a.w.garver@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Anila Alexander', email: 'anila.j.alexander@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Ben Sayeg', email: 'bensayeg@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 2, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
