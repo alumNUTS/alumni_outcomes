@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
 /* pop-up after survey completion */
 .inside_notice {
+	font-size: 11px;
 	padding: 0;
  	opacity: 1;
  	margin: 0;
@@ -17,3 +21,4 @@
  	text-align: center;
  	padding-top: 40px;
 }
+

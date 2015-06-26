@@ -1,5 +1,15 @@
+<header class="mainheader">
+		<div class='center'>
+			<%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+		</div><!-- imagediv -->
+</header>
+
 <%= @error %>
-<h1>Survey</h1>
+<h1>Welcome to the ALUMNUTS 100-Day Survey</h1>
+
+<p>Please complete our survey to help us gauge the success of our programs and future graduates.</p>
+<p>* Indicates that a response is required.</p>
+
 <% if @student.survey_complete != true %>
 	<%= form_for ([@student, @survey]) do |form| %>
 	  <%= render form %>

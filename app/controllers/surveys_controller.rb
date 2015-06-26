@@ -20,7 +20,7 @@ class SurveysController < ApplicationController
 	def create
     @survey = Survey.new
     if !params[:survey][:employment_status].nil?
-      if @survey.save
+      if @survey.save(survey_params)
         current_user.survey_complete = true
         current_user.is_employed = params[:survey][:employment_status]
         current_user.save
@@ -41,7 +41,11 @@ class SurveysController < ApplicationController
   end
 
   def show
+    @survey = Survey.find(params[:id])
+  end
 
+  def survey_params
+    params.require(:survey).permit(:name, :web_dev_type, :cohort_id, :employment_status, :position_type, :found_thru_outcomes, :company, :employment_date, :enough_preparation, :officer_effectiveness, :should_have_learned, :hurdles, :anything_else)
   end
 
 end
