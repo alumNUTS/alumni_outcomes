@@ -47,7 +47,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
 	  if @student.update(student_params)
-      if @student.survey_complete == true
 		  redirect_to @student
 	  else
       @cohorts = Cohort.all

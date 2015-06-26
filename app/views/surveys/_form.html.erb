@@ -1,4 +1,5 @@
 <div>
+  <%= form.hidden_field :cohort_id, value: @student.cohort.id %>
   <span>Your name</span>
   <%= form.text_field :name %>
 </div>
@@ -12,8 +13,8 @@
 <br>
 <div>
   <span>2. What’s your current employment status?</span><br>
-  <%= form.radio_button :is_employed, true %>Employed
-  <%= form.radio_button :is_employed, false %>Not Employed
+  <%= form.radio_button :employment_status, true %>Employed
+  <%= form.radio_button :employment_status, false %>Not Employed
 </div>
 <br>
 <div>
@@ -58,25 +59,25 @@
 <br>
 <div>
 	<p>Tell us in your own words:<p>
-</div>   
+</div>
 <br>
 <div>
   <span>8. What hard/soft skills that you didn’t learn while at GA would have better prepared you post-graduation, whether or not you’ve already found a job.</span><br>
   <%= form.text_field :should_have_learned %>
-</div>    
+</div>
 <br>
 <div>
   <span>9. If you’re currently not employed, what are some hurdles you’ve encountered during your job search?</span><br>
   <%= form.text_field :hurdles %>
-</div> 
+</div>
 <br>
 <div>
   <span>10. Anything else you want to say?</span><br>
   <%= form.text_field :anything_else %>
-</div> 
+</div>
 
 
 
 
 
-			
+
