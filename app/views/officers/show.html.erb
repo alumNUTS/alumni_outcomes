@@ -10,28 +10,44 @@
 				<%= "#{cohort[:name]}" %>
 			</a>
 			<br>
-			<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
+			<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
 			<br>
-			<small><%="Gratuated: #{cohort[:day_graduated]}"%></small>
-			<br>
-			<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
+			<% if cohort[:days_til_survey] < 100 %>
+				<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
+				<br>
+				<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
 					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
-			<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-				<small><a href="/send_survey/<%=cohort[:id]%>">Send Survey</a></small>
+				<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
+					<small><a href="/send_survey/<%=cohort[:id]%>">Send Survey</a></small>
+				<% else %>
+					<small>Survey's sent</small>
+				<% end %>
 			<% else %>
-				<small>Survey's sent</small>
+				<small>Employment Rate: <em>Class has not graduated yet</em> </small>
+				<br>
+				<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
+				<br>
 			<% end %>
+			
 		</li>
 		<%end%>
 	</ul>
 	<%= link_to 'Create cohort', new_officer_cohort_path(@officer) %>
 </div>
+<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
+<% end %>
 <div>
+
+<canvas id="myPieChart" width="200" height="200" style="float: left;">
+</canvas>
 
 <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
 	<a href="/cohorts">View ALL Cohorts</a>
 	<a href="/students">View ALL Students</a>
 
 </div>
+
+<%= javascript_include_tag 'chart' %>
+<%= javascript_include_tag 'officer-analytics' %>
 
 

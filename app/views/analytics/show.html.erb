@@ -1,7 +1,11 @@
 <h1>
 	<%= "Welcome to the #{@cohort.name} cohort page" %>
 </h1>
-<small><%=@message%></small>
+<% if @days < 0 %>
+	<div>
+		<em>*This Cohort has not graduated yet</em>
+	</div>
+<% end %>
 
 <!-- This is how we pass the controller data to the client -->
 <%= content_tag :div, class: 'cohort_statistics', data:{ cohort: @cohort, students: @students, days: @days, grad: @grad } do %>
@@ -19,5 +23,6 @@
 
 <canvas id="myLineChart" width="400" height="200">
 </canvas>
+
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'analytics' %>
