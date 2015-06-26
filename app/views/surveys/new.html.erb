@@ -1,0 +1,14 @@
+<%= @error %>
+<h1>Survey</h1>
+<% if @student.survey_complete != true %>
+	<%= form_for ([@student, @survey]) do |form| %>
+	  <%= render form %>
+	  <div class="actions">
+	    <div class="submit_survey"><%= form.submit 'Submit' %></div>
+	  </div>
+	<% end %>
+<% else %>
+	<p>  Uh oh. You can only submit this survey once. </p>
+<% end %>
+
+

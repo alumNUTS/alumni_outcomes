@@ -1,31 +1,48 @@
 class SurveysController < ApplicationController
 
-	def index
-		@student = Student.find(params[:student_id])
-		@survey = Survey.new
-
+	def new
+    if logged_in?
+      if is_hundred_days?(current_user.cohort.id) && is_student?
+        if current_user.id == params[:student_id].to_i && is_student?
+		      @student = Student.find(params[:student_id])
+		      @survey = Survey.new
+        else
+          redirect_to current_user, notice: "Are you NUTS? This isn't your survey."
+        end
+      else
+        redirect_to current_user, notice: "You can only complete this survey 100 days after your graduation"
+      end
+    else
+      redirect_to '/login', notice: "Please log in to complete the survey."
+    end
 	end
 
 	def create
-    if current_user.id != params[:student_id]
-  		@survey = Survey.new
-      
+    @survey = Survey.new
+    if !params[:survey][:employment_status].nil?
       if @survey.save
-      	@student = Student.find(params[:student_id])
-      	@student.survey_complete = true
-      	@student.save
-        flash.keep[:notice] = "You've successfully submitted your survey!"
-      	redirect_to @student
-    	else 
+        current_user.survey_complete = true
+        current_user.is_employed = params[:survey][:employment_status]
+        current_user.save
+        redirect_to current_user, notice: "You've successfully submitted your survey!"
+      else
         @student = Student.find(params[:student_id])
-    		render :index
-    	end
+        render :new
+      end
     else
       @student = Student.find(params[:student_id])
-      @error = "Are you NUTS? This isn't your survey"
-      render :index
+      @error = "Employment status can't be blank."
+      render :new
     end
-   end
+  end
+
+  def index
+    @cohort = Cohort.find(params[:cohort_id])
+  end
+
+  def show
+
+  end
 
 end
 
