@@ -18,6 +18,9 @@ class SurveysController < ApplicationController
         if @survey.save
         	@student = Student.find(params[:student_id])
         	@student.survey_complete = true
+          if @student.is_employed
+            @student.status = "alumnus"
+          end
         	@student.save
           flash.keep[:notice] = "You've successfully submitted your survey!"
         	redirect_to @student
