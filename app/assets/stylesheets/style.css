@@ -22,3 +22,35 @@
  	padding-top: 40px;
 }
 
+.error_line {	
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.body_txt {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.bold_txt {
+	font-weight: bold;
+}
+
+.formbox2{
+	width: 324px;
+	border: none;
+	height: 15px;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #5A5A5A;
+}
+
+
+
