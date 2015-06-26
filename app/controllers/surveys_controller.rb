@@ -1,37 +1,39 @@
 class SurveysController < ApplicationController
 
-	def index
+	def new
     if logged_in?
-		  @student = Student.find(params[:student_id])
-		  @survey = Survey.new
+      if is_hundred_days?(current_user.cohort.id) && is_student?
+        if current_user.id == params[:student_id].to_i && is_student?
+		      @student = Student.find(params[:student_id])
+		      @survey = Survey.new
+        else
+          redirect_to current_user, notice: "Are you NUTS? This isn't your survey"
+        end
+      else
+        redirect_to current_user, notice: "You can complete this survey only 100 days after your graduation"
+      end
     else
       redirect_to '/login', notice: "Please, log in to complete the survey"
     end
-
 	end
 
 	def create
+    @survey = Survey.new
+    if @survey.save
+      current_user.survey_complete = true
+      current_user.save
+      redirect_to current_user, notice: "You've successfully submitted your survey!"
+    else
+      @student = Student.find(params[:student_id])
+      render :new
+    end
+  end
 
-      if current_user.id != params[:student_id]
-    		@survey = Survey.new
+  def index
+  end
 
-        if @survey.save
-        	@student = Student.find(params[:student_id])
-        	@student.survey_complete = true
-        	@student.save
-          flash.keep[:notice] = "You've successfully submitted your survey!"
-        	redirect_to @student
-      	else
-          @student = Student.find(params[:student_id])
-      		render :index
-      	end
-      else
-        @student = Student.find(params[:student_id])
-        @error = "Are you NUTS? This isn't your survey"
-        render :index
-      end
-
-   end
+  def show
+  end
 
 end
 

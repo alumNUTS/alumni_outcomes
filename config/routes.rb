@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :officers do
 	  resources :cohorts
 	  resources :analytics
+    resources :surveys
 	end
 
 	resources :cohorts, only: [:show, :index]

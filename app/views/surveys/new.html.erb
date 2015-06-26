@@ -1,0 +1,18 @@
+<ul>
+  <% @survey.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<h1>Survey</h1>
+<% if @student.survey_complete != true %>
+	<%= form_for new_student_survey_path(@student) do |form| %>
+	  <%= render form %>
+	  <div class="actions">
+	    <div class="submit_survey"><%= form.submit 'Submit' %></div>
+	  </div>
+	<% end %>
+<% else %>
+	<p>  Uh oh. You can only submit this survey once. </p>
+<% end %>
+
+

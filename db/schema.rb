@@ -11,18 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150625200732) do
-
+ActiveRecord::Schema.define(version: 20150626020511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cohorts", force: :cascade do |t|
-    t.string  "name",       null: false
+    t.string  "name",                        null: false
     t.integer "officer_id"
     t.date    "start_date"
     t.date    "end_date"
+    t.boolean "survey_sent", default: false
   end
 
   create_table "officers", force: :cascade do |t|
