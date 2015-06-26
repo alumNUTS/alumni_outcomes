@@ -1,34 +1,26 @@
 <header class="mainheader">
-
-<div class="container">
-
-      <div class='homebutton'>
-      
-    </div><!-- homediv -->
-
-    <div class='center'>
-      <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
-    </div><!-- image_div -->
-
-    <div class="logout">
-    <body>
-    <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
-      <% if is_student? %>
-        <%= link_to "Home", student_path(current_user) %>
-      <% else %>
-        <%= link_to "Home", officer_path(current_user) %>
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if logged_in? %>
-      <%= link_to "Logout", logout_path, method: "DELETE" %>
-    <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
     </div><!-- logoutdiv -->
-
-</div><!-- container_div -->
-
-
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
 </header>
-
+<div class="navbar">
+  </div>
 
 
 

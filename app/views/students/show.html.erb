@@ -1,3 +1,27 @@
+<header class="mainheader">
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
+    </div><!-- logoutdiv -->
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
+</header>
+
+
+
 <div class="notice_survey">
   <% if flash[:notice] %>
     <div class="notice">
@@ -8,52 +32,85 @@
     </div>
   <% end %>
 </div>
-<%= link_to 'View cohort', @student.cohort %>
-<a href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
-<h1><%= @student.name %></h1>
-<p><%= @student.status %></p>
-<%= image_tag gravatar_url(@student.email, '100x100') %>
-<p>Cohort: <%= @student.cohort.name %></p>
-<p>Officer: <%= @student.cohort.officer.name %>
-<p>Email: <%= @student.email %></p>
-<p>Phone number: <% if @student.phone_number != nil %>
-    <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %>
-  <% end %>
-</p>
-<p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
-<% if @student.is_employed %>
-  <p>EMPLOYED</p>
-  <p>Company: <%= @student.company_name %></p>
-  <p>Started: <%= @student.employment_date %></p>
-<% else %>
-  <p>UNEMPLOYED</p>
-<% end %>
-<% if @student.skills != nil %>
-  <p>Skills:
-    <% @student.skills.gsub(",", "").split.each do |skill| %>
-    <span><%= skill %></span>
-    <% end %>
-  </p>
-<% end%>
-<% if is_hundred_days?(@student.cohort.id) %>
-  <p>Survey:
-  <% if @student.survey_complete %>
-    COMPLETED
-  <% else %>
-    PENDING <%= link_to 'Take a survey', new_student_survey_path(@student)%>
-  <% end %>
-  </p>
-<% end %>
+
+<div class="navbar">
+<%= link_to 'View cohort', @student.cohort, class: 'navbar' %>
+
+<a class="navbar" href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
 
 <% if students_page? %>
-  <%= link_to "Edit", edit_student_path(@student) %>
-
-  <%= form_tag(student_path, method: :delete) %>
-  <%= submit_tag 'Delete profile' %>
-
+  <%= link_to "Edit", edit_student_path(@student), class: 'navbar' %>
 <% end %>
+</div>
+
+
+
+
+
+<div class="profilecontainer">
+
+    <div class="pic">
+       <%= image_tag gravatar_url(@student.email, '100x100') %>
+    </div>
+
+    <div class="studentprofile">
+    <h1 class="studenthead"><%= @student.name %></h1>
+    <hr>
+    <p><%= @student.status %></p>
+    <p>Cohort: <%= @student.cohort.name %></p>
+    <p>Officer: <%= @student.cohort.officer.name %>
+    <p>Email: <%= @student.email %></p>
+    <p>Phone number: <% if @student.phone_number != nil %>
+        <%= @student.phone_number.to_s.insert(3, "-").insert(7, "-") %>
+      <% end %>
+    </p>
+
+    <p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
+    <% if @student.is_employed %>
+      <p>EMPLOYED</p>
+      <p>Company: <%= @student.company_name %></p>
+      <p>Started: <%= @student.employment_date %></p>
+    <% else %>
+      <p>UNEMPLOYED</p>
+    <% end %>
+    <% if @student.skills != nil %>
+      <p>Skills:
+        <% @student.skills.gsub(",", "").split.each do |skill| %>
+        <span><%= skill %></span>
+        <% end %>
+      </p>
+    <% end%>
+
+    <% if is_hundred_days?(@student.cohort.id) %>
+      <p>Survey:
+      <% if @student.survey_complete %>
+        COMPLETED
+      <% else %>
+        PENDING <%= link_to 'Take a survey', new_student_survey_path(@student)%>
+      <% end %>
+      </p>
+    <% end %>
+
+
+    <% if students_page? %>
+      <%= form_tag(student_path, method: :delete) %>
+      <%= submit_tag 'Delete profile' %>
+    <% end %>
+
+  </div><!-- studentprofile -->
+
+</div><!-- containter -->
+
+
+
+
 
 <%= javascript_include_tag 'main' %>
+
+  <footer>
+    <p>©Copyright AlumNuts LLC</p>
+  </footer>
+
 
 
 
