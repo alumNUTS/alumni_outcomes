@@ -4,6 +4,7 @@
 Student.destroy_all
 Officer.destroy_all
 Cohort.destroy_all
+Survey.destroy_all
 
 Officer.create([
   {name: 'Kyle Lee', email: 'kyle@example.com', password: "password"},
@@ -22,7 +23,6 @@ Cohort.create([
   ])
 
 Student.create([
-
   {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
@@ -58,3 +58,17 @@ Student.create([
   {name: 'Mindi Whittemore', email: 'mindi@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 7, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'}
 ])
 
+Survey.create(
+  {name: 'Jolanta Ray', web_dev_type: 1, employment_status: 'true', position_type: 1, found_thru_outcomes: 'true', company: 'Wired Magazine', employment_date: Date.parse('2015/06/28'), enough_preparation: 5, officer_effectiveness: 3, should_have_learned: 'At first I questioned if ruby was the best back-end language to learn but my job search luck proved me wrong.', hurdles: , anything_else: 'Nope, very happy with my outcome!', cohort_id: 3},
+  {name: 'James Poppa', web_dev_type: 1, employment_status: 'false', position_type: , found_thru_outcomes: , company: , employment_date: , enough_preparation: 3, officer_effectiveness: 2, should_have_learned: 'The skills we learned were relevant.', hurdles: 'My biggest hurdle is the fact that I was only going for start-up jobs but now I\ll start going for mid-size companies next.', anything_else: 'Guess you\ll be seeing more of me around campus getting some more leads.', cohort_id: 3}, 
+  {name: 'Clint Johnson', web_dev_type: 2, employment_status: 'false', position_type: , found_thru_outcomes: , company: , employment_date: , enough_preparation: 1, officer_effectiveness: 2, should_have_learned: 'I dunno why I can\t find a job. Been looking for 3 months now.', hurdles: 'Well, I went to London for a few weeks and finally got back on track with my job hunt.', anything_else: , cohort_id: 6},
+  {name: 'Joe Lemming', web_dev_type: 3, employment_status: 'true', position_type: 1, found_thru_outcomes: 'false', company: 'Poppin', employment_date: Date.parse('2015/07/04'), enough_preparation: 4, officer_effectiveness: 2, should_have_learned: 'Wanted to spend more time on front-end frameworks.', hurdles: , anything_else: 'My officer was helpful but ultimately I found a job on my own.', cohort_id: 3},
+  {name: 'Candice Metcalfe', web_dev_type: 3, employment_status: 'true', position_type: 2, found_thru_outcomes: 'true', company: 'Chase Bank', employment_date: Date.parse('2015/06/22'), enough_preparation: 5, officer_effectiveness: 3, should_have_learned: 'Seems like we learned a lot of what I\m using on the job right now.', hurdles: , anything_else: 'I\ve already turned on a couple of people to this course.', cohort_id: 3},
+  {name: 'Candice Metcalfe', web_dev_type: 3, employment_status: 'true', position_type: 1, found_thru_outcomes: 'true', company: 'Google', employment_date: Date.parse('2014/12/10'), enough_preparation: 5, officer_effectiveness: 3, should_have_learned: 'No real comment because I went for a ruby job and got it on the spot.', hurdles: , anything_else: 'Thanks for everything, guys.', cohort_id: 7},
+  {name: 'Clemente Gladstone', web_dev_type: 2, employment_status: 'true', position_type: 2, found_thru_outcomes: 'true', company: 'Dept of Labor', employment_date: Date.parse('2015/06/22'), enough_preparation: 5, officer_effectiveness: 2, should_have_learned: 'PHP and Python', hurdles: , anything_else: , cohort_id: 3},
+  {name: 'James Jones', web_dev_type: 3, employment_status: 'false', position_type: , found_thru_outcomes: , company: , employment_date: , enough_preparation: 1, officer_effectiveness: 1, should_have_learned: 'This course was tough but I feel like we learned TOO many things in a short amount of time.', hurdles: 'Everything', anything_else: , cohort_id: 3}, 
+  {name: 'Lee Cremini', web_dev_type: 1, employment_status: 'false', position_type: , found_thru_outcomes: , company: , employment_date: , enough_preparation: 1, officer_effectiveness: 2, should_have_learned: 'Wanted more time on CSS', hurdles: 'Maybe my Linkedin profile?????', anything_else: , cohort_id: 6},
+  {name: 'Brenda Chairish', web_dev_type: 2, employment_status: 'true', position_type: 1, found_thru_outcomes: 'true', company: 'Games, Games, and More Games', employment_date: Date.parse('2015/07/03'), enough_preparation: 4, officer_effectiveness: 3, should_have_learned: 'Drupul would have been great but am learning it on the job anyway', hurdles: , anything_else: , cohort_id: 3},
+  {name: 'Max Ergason', web_dev_type: 3, employment_status: 'true', position_type: 1, found_thru_outcomes: 'true', company: 'General Assembly', employment_date: Date.parse('2015/06/24'), enough_preparation: 5, officer_effectiveness: 3, should_have_learned: 'Totally relevant curriculum!', hurdles: , anything_else: , cohort_id: 3},
+  {name: 'Joan Sands', web_dev_type: 1, employment_status: 'true', position_type: 2, found_thru_outcomes: 'false', company: 'Gilt', employment_date: Date.parse('2014/12/31'), enough_preparation: 3, officer_effectiveness: 3, should_have_learned: 'I recommend teaching more frameworks cuz they totally streamline the workflow.', hurdles: , anything_else: 'Even though I found my job on my own, it wouldn\t have been possible w/out a great LinkedIn profile, thanks to GA!', cohort_id: 7}
+])
