@@ -27,9 +27,9 @@ class OfficersController < ApplicationController
 					id: cohort.id,
 					survey_sent: cohort.survey_sent,
 					name: cohort.name,
-					employed: (
-						truncate_to_two((students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
-						)/students.where(cohort_id: cohort.id).count.to_f) * 100),
+					# employed: (
+					# 	truncate_to_two((students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
+					# 	)/students.where(cohort_id: cohort.id).count.to_f) * 100),
 					day_graduated: cohort.end_date,
 						days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}

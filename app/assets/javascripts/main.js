@@ -11,10 +11,14 @@ $(document).ready(function(){
     $.ajax({
       type: 'GET',
       url: "/send_survey/" + cohortId,
-      data: cohortId
+      data: cohortId,
+      context: this
     }).done(function(){
       $(".load").hide();
-      $("small.officer_survey").text("Survey's sent");
+      $(this).hide()
+      var survey_sent = $("<small>").text("Survey's sent");
+      $(this).closest(".officer_survey").append(survey_sent)
+      ;
     })
   })
 
