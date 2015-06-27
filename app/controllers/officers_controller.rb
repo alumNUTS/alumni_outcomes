@@ -22,14 +22,12 @@ class OfficersController < ApplicationController
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
 			# Filling cohort statistics with relevant information
+			binding.remote_pry
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,
 					survey_sent: cohort.survey_sent,
 					name: cohort.name,
-					# employed: (
-					# 	truncate_to_two((students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
-					# 	)/students.where(cohort_id: cohort.id).count.to_f) * 100),
 					day_graduated: cohort.end_date,
 						days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
