@@ -37,8 +37,8 @@ class OfficersController < ApplicationController
 		end
 		cohort.survey_sent = true
 		cohort.save
+		redirect_to "/officers/#{current_user.id}"
 	end
-
 end
 
 	def truncate_to_two (x)

@@ -35,7 +35,7 @@ $(".survey_controller button").on("click",function(event){
     }).done(function(){
       $(".load").hide();
       $(this).hide()
-      var survey_sent = $("<a>").attr("href", "/cohorts/"+cohortId+"/surveys");
+      var survey_sent = $("<a>").attr("href", "/cohorts/"+cohortId+"/surveys").text("Survey's results");
       $(".survey_controller").append(survey_sent);
     })
 
