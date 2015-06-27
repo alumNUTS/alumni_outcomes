@@ -1,5 +1,9 @@
 class OfficersController < ApplicationController
 
+	# To be used while finding employment rate so we don't have any extra long percentages
+	def truncate_to_two (x)
+	   (x * 100).truncate/100.0	 
+	end
 
 	before_action :authorize
 
@@ -27,12 +31,13 @@ class OfficersController < ApplicationController
 					survey_sent: cohort.survey_sent,
 					name: cohort.name,
 					employed: (
-						students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
-						)/students.where(cohort_id: cohort.id).count.to_f,
+						truncate_to_two((students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
+						)/students.where(cohort_id: cohort.id).count.to_f) * 100),
 					day_graduated: cohort.end_date,
-					days_til_survey: (cohort.end_date + 100 - Date.today).to_i
+						days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
 			end
+
 		else
 			redirect_to '/'
 		end

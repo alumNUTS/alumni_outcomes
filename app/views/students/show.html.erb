@@ -33,6 +33,7 @@
   <% end %>
 </div>
 
+
 <div class="navbar">
 <%= link_to 'View cohort', @student.cohort, class: 'navbar' %>
 
@@ -40,6 +41,7 @@
 
 <% if students_page? %>
   <%= link_to "Edit", edit_student_path(@student), class: 'navbar' %>
+
 <% end %>
 </div>
 
@@ -107,10 +109,11 @@
 
 <%= javascript_include_tag 'main' %>
 
-  
+
   <footer>
     <p>©Copyright AlumNuts LLC</p>
   </footer>
+
 
 
 

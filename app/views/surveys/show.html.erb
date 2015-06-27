@@ -1,0 +1,43 @@
+<header class="mainheader">
+		<div class='center'>
+			<%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+		</div><!-- imagediv -->
+</header>
+
+
+<h1>Survey results for <%= @survey.name %> </h1>  
+
+	1. What type of web developer are you?<br> 
+	<%= @survey.web_dev_type_sym %><br>
+	<br>
+	2. What’s your current employment status?<br> 
+	<%= @survey.employment_status %><br>
+	<br>
+	3. What best describes your position?<br>
+	<%= @survey.position_type_sym %><br>
+	<br>
+	4. Did you find the position through our Outcomes Program?<br>
+  <%= @survey.found_thru_outcomes %><br>
+	<br>
+	5. If employed, Company Name: <%= @survey.company %><br>
+  Start Date: <%= @survey.employment_date %><br>
+	<br>
+	6. The technical skills I learned during my immersive course has properly prepared me for real-life work environments.<br>
+  <%= @survey.enough_preparation_sym %><br>
+	<br>
+	7. How would you rate the effectiveness of your Officer’s involvement in your job search preparation and actual job search?<br>
+  <%= @survey.officer_effectiveness_sym %><br>
+	<br>
+	8. What hard/soft skills that you didn’t learn while at GA would have better prepared you post-graduation, whether or not you’ve already found a job.<br>
+  <%= @survey.should_have_learned %><br>
+	<br>
+	9. If you’re currently not employed, what are some hurdles you’ve encountered during your job search?<br>
+  <%= @survey.hurdles %><br>
+	<br>
+	10. Anything else you want to say?<br>
+  <%= @survey.anything_else %><br>
+
+
+
+
+
