@@ -18,7 +18,7 @@ class CohortsController < ApplicationController
 
 	def show
     if is_student? && (current_user.cohort.id != params[:id].to_i)
-      redirect_to "/students/#{current_user.id}"
+      redirect_to "/errors/denied"
     else
       @cohort = Cohort.find(params[:id])
       @students = Student.where(cohort_id: @cohort.id)
@@ -30,15 +30,13 @@ class CohortsController < ApplicationController
   		@cohort = Cohort.new
       @officer = Officer.find(session[:user_id])
     else
-      redirect_to '/'
+      redirect_to '/errors/denied'
     end
 	end
 
 	def create
     @cohort = Cohort.new
     @cohort.name = params["cohort"]["name"]
-
-    #below will work after sessions is enabled
     @cohort.officer_id = current_user.id
     @cohort.start_date = params["cohort"]["start_date"]
     @cohort.end_date = params["cohort"]["end_date"]
