@@ -22,7 +22,6 @@ class OfficersController < ApplicationController
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
 			# Filling cohort statistics with relevant information
-			binding.remote_pry
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,
