@@ -4,12 +4,16 @@ class CohortsController < ApplicationController
   before_action :authorize, except: [:show]
 
 	def index
-		if $sort != nil
-      @cohorts = Cohort.order("#{$sort} ASC")
+    if !is_student?
+  		if $sort != nil
+        @cohorts = Cohort.order("#{$sort} ASC")
+      else
+        @cohorts = Cohort.all
+      end
+  		render :index
     else
-      @cohorts = Cohort.all
+      redirect_to '/errors/denied'
     end
-		render :index
 	end
 
 	def show
