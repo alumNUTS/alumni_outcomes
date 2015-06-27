@@ -13,11 +13,12 @@ $(document).ready(function(){
       url: "/send_survey/" + cohortId,
       data: cohortId
     }).done(function(){
-      $(".load").hide()
+      $(".load").hide();
+      $("small.officer_survey").text("Survey's sent");
     })
   })
 
-
+// form if employed - the hidden div with company name and start date appears
   $(".checkbox").change(function(){
     if($(".employment_info").is(':visible')){
       $(".employment_info").hide()

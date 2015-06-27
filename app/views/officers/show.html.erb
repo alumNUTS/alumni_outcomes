@@ -35,23 +35,25 @@
 			<br>
 			<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
 			<br>
-			<% if cohort[:days_til_survey] < 100 %>
+			<% if cohort[:days_til_survey] < 100 || cohort[:days_til_survey].nil? %>
 				<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
 				<br>
-				<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
-					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
-				<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-					<small><button id="send_survey">Send Survey</button></small>
-				<% else %>
-					<small>Survey's sent</small>
-				<% end %>
+        <div class="officer_survey">
+  				<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
+  					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
+  				<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
+  					<small><button id="send_survey">Send Survey</button></small>
+  				<% else %>
+  					<small>Survey's sent</small>
+  				<% end %>
+        </div><!--officer_survey-->
 			<% else %>
 				<small>Employment Rate: <em>Class has not graduated yet</em> </small>
 				<br>
 				<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
 				<br>
 			<% end %>
-			
+
 		</li>
 		</div>
 		<%end%>
