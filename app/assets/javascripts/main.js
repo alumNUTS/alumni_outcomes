@@ -35,11 +35,10 @@ $(".survey_controller button").on("click",function(event){
     }).done(function(){
       $(".load").hide();
       $(this).hide()
-      var survey_sent = $("<span>").text("Survey's sent");
-      $(".survey_controller").append(survey_sent)
-      ;
+      var survey_sent = $("<a>").attr("href", "/cohorts/"+cohortId+"/surveys");
+      $(".survey_controller").append(survey_sent);
     })
-})
+
 
 // form if employed - the hidden div with company name and start date appears
   $(".checkbox").change(function(){
@@ -63,3 +62,49 @@ $(".survey_controller button").on("click",function(event){
 
 })
 
+
+
+//data from surveys
+var full_stack = $('.cohort_stats').data('fullstack');
+var front_end = $('.cohort_stats').data('frontend');
+var back_end = $('.cohort_stats').data('backend');
+var full_time = $('.cohort_stats').data('fulltime');
+var temp = $('.cohort_stats').data('temptoperm');
+var freelance = $('.cohort_stats').data('freelance');
+
+//dev type bar chart
+var ctx = $("#myBarChart").get(0).getContext("2d");
+var data = {
+    labels: ["Type", "Position"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(250,219,150,1)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [full_stack, full_time]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,1)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: [front_end, temp]
+        },
+        {
+            label: "My First dataset",
+            fillColor: "rgba(89,197,160,1)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [back_end, freelance]
+        }
+
+
+    ]
+};
+
+var myBarChart = new Chart(ctx).Bar(data);
+})

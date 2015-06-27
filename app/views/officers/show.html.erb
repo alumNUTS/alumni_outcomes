@@ -23,7 +23,18 @@
 </div>
 <h1>Welcome, <%=@officer.name%></h1>
 <%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
-<div >
+
+<div class="notice_board">
+  <h3>Notice board</h3>
+  <p>Don't forget to send surveys to:
+  <% @officer.cohorts.each do |cohort| %>
+    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
+      <span><%= cohort.name %></span>
+    <% end %>
+  <% end %>
+</div><!--notice board-->
+
+<div>
 	<big>My Cohorts:</big>
 	<ul class="officer_cohorts">
 		<% @cohort_stats.each do |cohort| %>

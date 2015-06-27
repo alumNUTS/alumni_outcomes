@@ -40,9 +40,13 @@ class SurveysController < ApplicationController
     end
   end
 
+
   def index
     if !is_student? && current_user.cohorts.exists?(params[:cohort_id])
       @cohort = Cohort.find(params[:cohort_id])
+      @web_dev_type = @cohort.surveys.group(:web_dev_type).count
+      @position_type = @cohort.surveys.group(:position_type).count
+      @thru_outcomes = @cohort.surveys.group(:found_thru_outcomes).count
     else
       redirect_to '/errors/denied'
     end
@@ -55,6 +59,7 @@ class SurveysController < ApplicationController
       redirect_to '/errors/denied'
     end
   end
+
 
 
   private

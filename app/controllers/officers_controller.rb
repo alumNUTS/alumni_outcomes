@@ -17,6 +17,8 @@ class OfficersController < ApplicationController
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
 			# Filling cohort statistics with relevant information
+
+
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,
@@ -35,8 +37,8 @@ class OfficersController < ApplicationController
 		end
 		cohort.survey_sent = true
 		cohort.save
-		redirect_to "/officers/#{current_user.id}"
 	end
+
 end
 
 	def truncate_to_two (x)

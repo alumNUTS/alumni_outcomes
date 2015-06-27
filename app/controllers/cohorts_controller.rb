@@ -21,6 +21,7 @@ class CohortsController < ApplicationController
       redirect_to "/errors/denied"
     else
       @cohort = Cohort.find(params[:id])
+
       @students = Student.where(cohort_id: @cohort.id)
     end
 	end

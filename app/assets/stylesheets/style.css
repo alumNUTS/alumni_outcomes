@@ -58,3 +58,15 @@
 	margin-right: -100px;
 	margin-top: -50px;
 }
+
+.position_type{
+	float: left;
+	margin-left: 45px;
+}
+.dev_type{
+	float:left;
+	margin-left:10px;
+}
+.bar-chart_explanation {
+	clear: both;
+}
