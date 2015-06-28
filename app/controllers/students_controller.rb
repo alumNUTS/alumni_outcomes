@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
     else
       @student = Student.find(params[:id])
       if @student.is_employed && @student.survey_complete
-        @student.status = "alumnus"
+        @student.status = "Alumnus"
         @student.save
       end
     end
@@ -34,6 +34,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
+      if (Date.today - @student.cohort.end_date) > 0
+        @student.status = "Outcome"
+        @student.save
+      end
       session[:user_id] = @student.id
       session[:user_type] = :student
       redirect_to @student

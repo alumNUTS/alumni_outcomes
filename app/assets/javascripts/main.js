@@ -1,10 +1,11 @@
 // window pop-up thanking for survey completion
 $(document).ready(function(){
-	$(".notice_survey").on("click", function(){
-		$(".notice").hide()
-	})
 
-//officer's page - sends email with the link to survey to all students in a specific cohort
+  $(".notice_survey").on("click", function(){
+        $(".notice").hide()
+    })
+
+  //officer's page - sends email with the link to survey to all students in a specific cohort
   $(".officer_cohort").on("click", "#send_survey", function(event){
     $(".load").show()
     var cohortId = $(this).closest(".officer_cohort").data("id");
@@ -36,16 +37,17 @@ $(document).ready(function(){
     var cohortId = $(".survey_controller").data("id");
     $(".load").show()
     $.ajax({
-        type: 'GET',
-        url: "/send_survey/" + cohortId,
-        data: cohortId,
-        context: this
-      }).done(function(){
-        $(".load").hide();
-        $(this).hide()
-        var survey_sent = $("<a>").attr("href", "/cohorts/"+cohortId+"/surveys").text("Survey's results");
-        $(".survey_controller").append(survey_sent);
-      })
+      type: 'GET',
+      url: "/send_survey/" + cohortId,
+      data: cohortId,
+      context: this
+    }).done(function(){
+      $(".load").hide();
+      $(this).hide()
+      var survey_sent = $("<a>").attr("href", "/cohorts/"+cohortId+"/surveys").text("Survey's results");
+      $(".survey_controller").append(survey_sent);
+    })
+  })
 
   //silhoutte animation
   var count = 1
@@ -53,10 +55,9 @@ $(document).ready(function(){
     $('#person' + count).fadeIn(100)
     count += 1
     if (count > 30) {
-      clearInterval(starting)
+    clearInterval(starting)
     }
   }, 100)
-  })
 
   //data from surveys for a particular cohort
   var full_stack = $('.cohort_stats').data('fullstack');
@@ -70,36 +71,38 @@ $(document).ready(function(){
     var ctxB = $("#myBarChart").get(0).getContext("2d");
     var ctxP = $("#mySurveyPieChart").get(0).getContext("2d");
     var data = {
-        labels: ["Type", "Position"],
-        datasets: [
-          {
-              label: "My First dataset",
-              fillColor: "rgba(250,219,150,1)",
-              strokeColor: "rgba(220,220,220,0.8)",
-              highlightFill: "rgba(220,220,220,0.75)",
-              highlightStroke: "rgba(220,220,220,1)",
-              data: [full_stack, full_time]
-          },
-          {
-              label: "My Second dataset",
-              fillColor: "rgba(151,187,205,1)",
-              strokeColor: "rgba(151,187,205,0.8)",
-              highlightFill: "rgba(151,187,205,0.75)",
-              highlightStroke: "rgba(151,187,205,1)",
-              data: [front_end, temp]
-          },
-          {
-              label: "My First dataset",
-              fillColor: "rgba(89,197,160,1)",
-              strokeColor: "rgba(220,220,220,0.8)",
-              highlightFill: "rgba(220,220,220,0.75)",
-              highlightStroke: "rgba(220,220,220,1)",
-              data: [back_end, freelance]
-          }
-        ]
-      };
+      labels: ["Type", "Position"],
+      datasets: [
+        {
+          label: "My First dataset",
+          fillColor: "rgba(250,219,150,1)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)",
+          data: [full_stack, full_time]
+        },
+        {
+          label: "My Second dataset",
+          fillColor: "rgba(151,187,205,1)",
+          strokeColor: "rgba(151,187,205,0.8)",
+          highlightFill: "rgba(151,187,205,0.75)",
+          highlightStroke: "rgba(151,187,205,1)",
+          data: [front_end, temp]
+        },
+        {
+          label: "My First dataset",
+          fillColor: "rgba(89,197,160,1)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)",
+          data: [back_end, freelance]
+        }
+      ]
+    };
+
     var outcomesHelped = $('.cohort_stats').data('outcomesHelped');
     var outcomesNotHelped = $('.cohort_stats').data('outcomesNoHelp');
+
   //pie chart - effectiveness of the outcomes program for a particular cohort
     var dataPie = [
         {
@@ -118,6 +121,8 @@ $(document).ready(function(){
     var myBarChart = new Chart(ctxB).Bar(data);
     var mySurveyPieChart = new Chart(ctxP).Pie(dataPie)
   }
+
+
   // data for a bar chart for the whole program
   var fullStack = $('.program_stats').data('fullStack');
   var frontEnd = $('.program_stats').data('frontEnd');
@@ -132,35 +137,36 @@ $(document).ready(function(){
   var dataBP = {
       labels: ["Type", "Position"],
       datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(250,219,150,1)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: [fullStack, fullTime]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,1)",
-            strokeColor: "rgba(151,187,205,0.8)",
-            highlightFill: "rgba(151,187,205,0.75)",
-            highlightStroke: "rgba(151,187,205,1)",
-            data: [frontEnd, tempToPerm]
-        },
-        {
-            label: "My First dataset",
-            fillColor: "rgba(89,197,160,1)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: [backEnd, freelanceP]
-        }
+          {
+              label: "My First dataset",
+              fillColor: "rgba(250,219,150,1)",
+              strokeColor: "rgba(220,220,220,0.8)",
+              highlightFill: "rgba(220,220,220,0.75)",
+              highlightStroke: "rgba(220,220,220,1)",
+              data: [fullStack, fullTime]
+          },
+          {
+              label: "My Second dataset",
+              fillColor: "rgba(151,187,205,1)",
+              strokeColor: "rgba(151,187,205,0.8)",
+              highlightFill: "rgba(151,187,205,0.75)",
+              highlightStroke: "rgba(151,187,205,1)",
+              data: [frontEnd, tempToPerm]
+          },
+          {
+              label: "My First dataset",
+              fillColor: "rgba(89,197,160,1)",
+              strokeColor: "rgba(220,220,220,0.8)",
+              highlightFill: "rgba(220,220,220,0.75)",
+              highlightStroke: "rgba(220,220,220,1)",
+              data: [backEnd, freelanceP]
+          }
       ]
     };
 
     var myProgramBarChart = new Chart(ctxBP).Bar(dataBP);
-    //data for program pie chart
+
+  //data for program pie chart
     var outcomesProgramHelped = $('.program_stats').data('outcomesHelped');
     var outcomesProramNotHelped = $('.program_stats').data('outcomesNoHelp');
 
@@ -179,6 +185,7 @@ $(document).ready(function(){
             label: "Green"
         },
       ];
-    var myProgramPieChart = new Chart(ctxPP).Pie(dataProgramPie)
+
+  var myProgramPieChart = new Chart(ctxPP).Pie(dataProgramPie)
   }
 });
