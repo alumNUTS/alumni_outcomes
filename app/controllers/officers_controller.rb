@@ -2,7 +2,7 @@
 
 	# To be used while finding employment rate so we don't have any extra long percentages
 	def truncate_to_two (x)
-	   (x * 100).truncate/100.0	 
+	   (x * 100).truncate/100.0
 	end
 
 	before_action :authorize
@@ -30,11 +30,9 @@
 					day_graduated: cohort.end_date,
 					days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
-
 			end
-
 		else
-			redirect_to '/'
+			redirect_to '/errors/denied'
 		end
 	end
 

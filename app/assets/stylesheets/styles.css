@@ -52,7 +52,7 @@ margin-top: 30px;
 }
 
 .cohortcontainter{
-	width: 700px;
+	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 40px;
@@ -76,7 +76,7 @@ margin-left: 0;
 
 .notice_board{
 	background: #96BBCE;
-	width: 600px;
+	width: 740px;
 	margin: 20px;
 	padding: 20px;
 	text-align: center;
@@ -479,17 +479,35 @@ margin-top: 30px;
 
 .survey-charts{
 	width: 350px;
-	margin-left: auto;
-	margin-right: auto;
+	float: left;
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 }
 
+.surveycontainer{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .survey-complete-students {
+	float: left;
 	list-style-type: none;
+}
+
+.chartscontainer2{
+	margin-left: auto;
+	margin-right: auto;
+	width: 600px;
+	float: left;
 }
 
 .survey-complete-students li a{
 	color: #222222;
 }
-
+.officer_chart_expl {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}

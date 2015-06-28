@@ -84,19 +84,21 @@
 
 <div class="chart">
 	<div class="chartheadbox">
-	<h2 class="charthead">My Cohorts</h2>
-</div>
+	   <h2 class="charthead">My Cohorts</h2>
+  </div>
 	<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
-<% end %>
-<canvas id="myPieChart" width="300" height="300" style="float: left;">
-</canvas><br>
-<!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
+  <% end %>
+  <canvas id="myPieChart" width="300" height="300" style="float: left;">
+  </canvas><br>
+  <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
    	<div class="chartheadbox">
-		<h2 class="charttext">Employment After 90 Days</h2>
+		  <h2 class="charttext">Employment After 90 Days</h2>
 		</div>
+  <div class="officer_chart_expl">
+    <p><%= image_tag 'yellow.png', size: '15x15'%> - Unemployed</p>
+    <p><%= image_tag 'blue.png', size: '15x15'%> - Employed</p>
+  </div>
 </div><!-- chart end -->
-  <p><%= image_tag 'yellow.png', size: '15x15'%> - Unemployed</p>
-  <p><%= image_tag 'blue.png', size: '15x15'%> - Employed</p>
 </div><!-- containter end -->
 
 

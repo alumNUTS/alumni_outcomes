@@ -25,6 +25,8 @@
 <div class="navbar">
 </div>
 
+
+<div class="chartscontainer2">
 <div class="survey-charts">
 <div class="position_type_chart">
   <canvas id="myBarChart" width="300" height="300" style="float: left;">
@@ -58,9 +60,9 @@
    </div><!--pie-chart explanation-->
   </div>
 
-
 <%= content_tag :div, class: 'cohort_stats', data:{ fullStack: @web_dev_type[1], frontEnd: @web_dev_type[2], backEnd: @web_dev_type[3], fullTime: @position_type[1], tempToPerm: @position_type[2], freelance: @position_type[3], outcomes_helped: @thru_outcomes[true], outcomes_no_help: @thru_outcomes[false] } do %>
 <% end %>
+</div>
 
 <ul class="survey-complete-students">
 <% @cohort.surveys.each do |survey| %>
@@ -76,6 +78,7 @@
 <% end %>
 </ul>
 </div>
+
 
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'main' %>
