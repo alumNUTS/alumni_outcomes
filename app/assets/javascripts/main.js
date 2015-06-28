@@ -17,7 +17,7 @@ $(document).ready(function(){
     }).done(function(){
       $(".load").hide();
       $(this).hide()
-      var survey_sent = $("<small>").text("Survey's sent");
+      var survey_sent = $("<small>").text("Survey status: Sent");
       $(this).closest(".officer_survey").append(survey_sent)
       ;
     })
