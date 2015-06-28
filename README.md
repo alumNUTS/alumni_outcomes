@@ -32,6 +32,7 @@ GitHub links for:
 * Active Record  
 * Action Mailer
 * jQuery  
+* Ajax
 
 
 ##Additional Resources##
