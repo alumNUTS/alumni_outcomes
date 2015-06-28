@@ -1,10 +1,29 @@
 <header class="mainheader">
-		<div class='center'>
-			<%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
-		</div><!-- imagediv -->
+  <div class="container">
+      <div class='homebuttonDiv'>
+        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% end %>
+    </div><!-- homediv -->
+     <div class='logout'>
+        <% if logged_in? %>
+           <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
+        <% end %>
+    </div><!-- logoutdiv -->
+    <div class='center'>
+        <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
+    </div><!-- image_div -->
+  </div><!-- container_div -->
 </header>
 
+<div class="navbar">
+</div>
 
+<div class="survey-charts">
 <div class="position_type_chart">
   <canvas id="myBarChart" width="300" height="300" style="float: left;">
   </canvas>
@@ -41,13 +60,20 @@
 <%= content_tag :div, class: 'cohort_stats', data:{ fullStack: @web_dev_type[1], frontEnd: @web_dev_type[2], backEnd: @web_dev_type[3], fullTime: @position_type[1], tempToPerm: @position_type[2], freelance: @position_type[3], outcomes_helped: @thru_outcomes[true], outcomes_no_help: @thru_outcomes[false] } do %>
 <% end %>
 
+<ul class="survey-complete-students">
 <% @cohort.surveys.each do |survey| %>
   <% if survey.name.nil? %>
-    <%= link_to 'Anonymous', [@cohort, survey] %>
+    <li>
+      <%= link_to 'Anonymous', [@cohort, survey] %>
+    </li>
   <% else %>
+  <li>
     <%= link_to survey.name, [@cohort, survey] %>
+  </li>
   <% end %>
 <% end %>
+</ul>
+</div>
 
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'main' %>
