@@ -25,19 +25,17 @@
 .person-tan {
 	width: 300px;
 	height: 200px;
-	z-index: 1;
-	position: relative;
-
-
+	position: absolute;
+	top: 250px;
+	right: 100px;
 }
 
 .person-black {
 	width: 300px;
 	height: 200px;
-	position: relative;
-	z-index: -1;
-	margin-top: -400px;
-
+	position: absolute;
+	top: 250px;
+	right: 100px;
 }
 
 .person {
@@ -45,6 +43,13 @@
 	width: 150px;
 	margin-right: -100px;
 	margin-top: -50px;
+}
+
+.peoplechart{
+	float: right;
+	margin: 0;
+	width: 300px;
+	padding-right: 200px;
 }
 
 .employment_info{
@@ -133,13 +138,25 @@
 }
 
 .stats-container{
-width: 1400px;
+width: 900px;
 margin-right: auto;
 margin-left: auto;
 }
 .statshead{
 	text-align: center;
-	margin: 20px;
+	margin: 20px 0 60px 0;
+}
+
+#send_survey{
+	width: 100px;
+	height: 40px;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	border: none;
+	border-radius: 10px;
+	background: #CC1F14;
+	margin-top: 10px;
 }
 
 
@@ -148,19 +165,16 @@ margin-left: auto;
 }
 #mylinechart{
 	background: #FEDD91;
+	float: left;
 }
-.peoplechart{
-	margin: 20px;
-	width: 300px;
-	padding: 0;
-}
+
 .percent{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
 	float: left;
 	color: #222222;
 	font-size: 200px;
-	margin: 40px;
+	margin: 10px 80px 10px 100px;
 }
 
 .cohortpiechart{

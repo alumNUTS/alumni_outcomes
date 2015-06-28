@@ -36,8 +36,6 @@
   </div> <!-- stats-head -->
 
 
-<div class="stats-container">
-
   <div class="peoplechart">
     <!-- determines how many tan people should be displayed based on total number of students -->
     <div class="person-tan">
@@ -53,25 +51,28 @@
     </div>
 </div><!--  peoplechart -->
 
+<div class="stats-container">
+
+<div class="linechart">
+<canvas id="myLineChart" width="600" height="250">
+</canvas>
+</div>
 
 <div class="cohortpiechart">
-    <h2 class="cohortpiehead">Chart Headline</h2>
+    <h2 class="cohortpiehead">Employment</h2>
     <canvas id="myPieChart" width="200" height="200">
     </canvas>
-    <h2 class="cohortpiestat">Statistic of Chart Here</h2>
+    <h2 class="cohortpiestat">Students Employed</h2>
 </div> <!-- piechart -->
 
 
 <!-- This is the animated employment percentage-->
 
-<div class="percent" style="float:left;font-size: 100px;color: #f0553a;">
+<div class="percent">
 </div>
 
-<canvas id="myLineChart" width="400" height="200">
-</canvas>
 
-
-
+</div> <!-- containter -->
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'analytics' %>
 <%= javascript_include_tag 'main' %>
