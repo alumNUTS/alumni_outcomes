@@ -29,7 +29,6 @@
 						)/students.where(cohort_id: cohort.id).count.to_f) * 100) : 0.0,
 					day_graduated: cohort.end_date,
 					days_til_survey: (cohort.end_date + 100 - Date.today).to_i
-					survey_jobs: (cohort.end_date + 100 - Date.today).to_i <= 0 ? 
 				}
 
 			end
