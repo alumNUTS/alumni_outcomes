@@ -59,8 +59,8 @@
 
     <div class="studentprofile">
     <h1 class="studenthead"><%= @student.name %></h1>
+    <h3><%= @student.status %></h3>
     <hr>
-    <p><%= @student.status %></p>
     <p>Cohort: <%= @student.cohort.name %></p>
     <p>Officer: <%= @student.cohort.officer.name %>
     <p>Email: <%= @student.email %></p>
@@ -78,11 +78,7 @@
       <p>UNEMPLOYED</p>
     <% end %>
     <% if @student.skills != nil %>
-      <p>Skills:
-        <% @student.skills.gsub(",", "").split.each do |skill| %>
-        <span><%= skill %></span>
-        <% end %>
-      </p>
+      <p>Skills: <%= @student.skills %></p>
     <% end%>
 
     <% if is_hundred_days?(@student.cohort.id) %>
@@ -90,7 +86,10 @@
       <% if @student.survey_complete %>
         COMPLETED
       <% else %>
-        PENDING <%= link_to 'Take a survey', new_student_survey_path(@student)%>
+        Not Yet Completed 
+        <% if is_student? %>
+          <%= link_to 'Take a survey', new_student_survey_path(@student)%>
+        <% end %> 
       <% end %>
       </p>
     <% end %>

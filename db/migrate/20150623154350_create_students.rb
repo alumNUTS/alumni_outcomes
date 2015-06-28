@@ -12,7 +12,7 @@ class CreateStudents < ActiveRecord::Migration
     	t.string :company_name
     	t.date :employment_date
     	t.integer :cohort_id
-    	t.string :status, default: "student"
+    	t.string :status, default: "Student"
     	t.boolean :survey_complete
     	t.string :image
     	t.timestamps
