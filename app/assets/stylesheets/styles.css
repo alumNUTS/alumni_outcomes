@@ -451,14 +451,30 @@ margin-top: 30px;
 	border: none;
 	width: 100px;
 	height: 40px;
-border-radius: 10px;
+	border-radius: 10px;
 	background: #CC1F14;
-		font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 12px;
 	color: #222222;
 }
 
 .takesurvey{
+	color: #222222;
+}
+
+.survey-charts{
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+.survey-complete-students {
+	list-style-type: none;
+}
+
+.survey-complete-students li a{
 	color: #222222;
 }

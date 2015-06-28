@@ -31,7 +31,6 @@
 			var $ctxP = $('#myPieChart').get(0).getContext('2d');
 			var myNewChartP = new Chart($ctxP);
 
-			// Employment pie chart data
 			var pieData = [
 			{
 				value: avgEmployment,
