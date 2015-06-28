@@ -1,4 +1,4 @@
-class OfficersController < ApplicationController
+	class OfficersController < ApplicationController
 
 	# To be used while finding employment rate so we don't have any extra long percentages
 	def truncate_to_two (x)
@@ -25,17 +25,20 @@ class OfficersController < ApplicationController
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
 			# Filling cohort statistics with relevant information
+			# binding.pry
 			cohorts.each do |cohort|
+				# binding.pry
 				@cohort_stats << {
 					id: cohort.id,
 					survey_sent: cohort.survey_sent,
 					name: cohort.name,
-					employed: (
+					employed: students.where(cohort_id: cohort.id).count != 0 ? (
 						truncate_to_two((students.where(cohort_id: cohort.id).count.to_f - students.where(cohort_id: cohort.id).group(:is_employed).count[false].to_f
-						)/students.where(cohort_id: cohort.id).count.to_f) * 100),
+						)/students.where(cohort_id: cohort.id).count.to_f) * 100) : 0.0,
 					day_graduated: cohort.end_date,
 						days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
+				# binding.pry
 			end
 
 		else
