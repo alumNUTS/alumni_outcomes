@@ -36,7 +36,7 @@
 			{
 				value: avgEmployment,
 				label: 'Employed',
-				color: '#f0553a'
+				color: '#95bbcc'
 			},
 			{
 				value: 100 - avgEmployment,
