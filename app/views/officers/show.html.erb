@@ -20,56 +20,74 @@
   </div><!-- container_div -->
 </header>
 <div class="navbar">
+	<%= link_to 'Create cohort', new_officer_cohort_path(@officer), class: 'navbar' %>
+	<a href="/cohorts" class="navbar">View ALL Cohorts</a>
+	<a href="/students" class="navbar">View ALL Students</a>
 </div>
+
+<div class="officerWelcome">
 <h1>Welcome, <%=@officer.name%></h1>
-<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
-<div >
+</div>
+
+
+
+<div class="cohortcontainter">
+
+
+<div class='officerprofile'>
 	<big>My Cohorts:</big>
+	<hr>
 	<ul class="officer_cohorts">
 		<% @cohort_stats.each do |cohort| %>
-		<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
-		<li>
-			<a href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
-				<%= "#{cohort[:name]}" %>
-			</a>
-			<br>
-			<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
-			<br>
-			<% if cohort[:days_til_survey] < 100 %>
-				<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
-				<br>
-				<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
-					<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
-				<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-					<small><button id="send_survey">Send Survey</button></small>
-				<% else %>
-					<small>Survey's sent</small>
-				<% end %>
-			<% else %>
-				<small>Employment Rate: <em>Class has not graduated yet</em> </small>
-				<br>
-				<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
-				<br>
-			<% end %>
-			
-		</li>
-		</div>
+				<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
+				<li>
+					<a class="cohorttag" href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
+						<%= "#{cohort[:name]}" %>
+					</a>
+					<br>
+					<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
+					<br>
+					<% if cohort[:days_til_survey] < 100 %>
+						<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
+						<br>
+						<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
+							<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
+						<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
+							<small><button id="send_survey">Send Survey</button></small>
+						<% else %>
+							<small>Survey's sent</small>
+						<% end %>
+					<% else %>
+						<small>Employment Rate: <em>Class has not graduated yet</em> </small>
+						<br>
+						<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
+						<br>
+					<% end %>
+				</li>
+				</div>
 		<%end%>
 	</ul>
-	<%= link_to 'Create cohort', new_officer_cohort_path(@officer) %>
+	<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
+</div> <!-- officerprofile end -->
+
+
+<div class="chart">
+	<div class="chartheadbox">
+	<h2>Chart Headline</h2>
 </div>
-<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
+	<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
 <% end %>
-<div>
-
-<canvas id="myPieChart" width="200" height="200" style="float: left;">
-</canvas>
-
+<canvas id="myPieChart" width="300" height="300" style="float: left;">
+</canvas><br>
 <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
-	<a href="/cohorts">View ALL Cohorts</a>
-	<a href="/students">View ALL Students</a>
+   	<div class="chartheadbox">
+		<h2>Statistic of Chart Here</h2>
+		</div>
+</div><!-- chart end -->
 
-</div>
+</div><!-- containter end -->
+
+
 
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'officer-analytics' %>

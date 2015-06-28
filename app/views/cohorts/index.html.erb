@@ -23,37 +23,40 @@
 	</div>
 
 
-
+<div class="allcohortcontainter">
 
 <h1>All Cohorts</h1>
-
+<hr>
 <div>
 	<form action="/cohorts/sort" method="POST" id="sort_by">
 	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
 			Sort by:
-			<select name="sort_by">
+			<select name="sort_by" id="sort_by">
 				<option value="name">Cohort Name (alphabetically)</option>
 				<option value="officer_id">Officer Name</option>
 				<option value="start_date">Start Date</option>
 				<option value="end_date">End Date</option>
 			</select>	
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit" class='cohort_submit'>
 		</form>
 </div>
 
-<div>
-	<ul>
-		<% @cohorts.each do |cohort| %>
-		<li>
-			<a href="/cohorts/<%= cohort.id %>"><%= cohort.name %></a>
-			<br>
-			<span>Start Date: </span><%= cohort.start_date %>
-			<br>
-			<span>End Date: </span><%= cohort.end_date %>
-			<br>
-			<span>Officer: </span><%= cohort.officer.name %>
-		<% end %>
-		</li>
-	</ul>
-</div>
+	<div>
+		<ul class="officer_cohorts">
+			<% @cohorts.each do |cohort| %>
+			<div class = "officer_cohort">
+			<li>
+				<a class="cohorttag" href="/cohorts/<%= cohort.id %>"><%= cohort.name %></a>
+				<br>
+				<span>Start Date: </span><%= cohort.start_date %>
+				<br>
+				<span>End Date: </span><%= cohort.end_date %>
+				<br>
+				<span>Officer: </span><%= cohort.officer.name %>
+			<% end %>
+			</li>
+			</div>
+		</ul>
+	</div>
 
+</div>
