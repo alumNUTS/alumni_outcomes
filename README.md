@@ -5,19 +5,15 @@
 ##Description##
 The ALUMNUTS app provides web development program officers an interactive snapshot of the graduated cohorts to effectively gauge the program's success during a graduate's job search and subsequent hire.
 
-Via the student portal, a student can create a profile, log in, and update their profile with employment status, contact info, and skills.
+Via the student portal, a student can create a profile, log in, and update their profile with employment status, contact info, password, and skills.
 
 Via the officer's portal, an outcomes officer can log in and view targeted data from an individual graduate or from an entire cohort. 
 
-The officer can view graphic analytics based on the updates a student enters and from his/her 100-Day Survey. The graphs include _____________________.
+The officer can view graphic analytics based on the updates a student enters and from his/her 100-Day Survey, as well as the total employment rate across all his cohorts. The individual graduate's graphs include a bar type showing web developer type and if employeed, the type of job (full-time vs. freelance), and a pie chart displaying whether or not the job was found through the outcomes program. Additionally, an officer can access a screen of graphics laying out stats per cohort.
 
-<!-- THIS IS FROM THE ASSIGNMENT:     
-The outcomes officer can view the percentage of students who currently have jobs, and the percentage who got jobs in the first 90 days post-graduation within a specific class and across an immersive program, using graphics to help understand the information. 
--->
+The officer is also alerted when a given cohort graduated over 100 days ago, at which point he can press a button to auto-send a 100-Day Survey to every member of that cohort. The student then receives an email with a link to the survey. In addition, the student can choose to take the survey directly from his/her profile page as an alert will appear there 100 days after graduation. All survey answers are stored in the database which immediately updates the analytics. 
 
-The officer is also alerted when a given cohort graduated over 100 days ago, at which point he can press a button to auto-send a 100-Day Survey to every member of that cohort. The student will receive an email with a link to the survey. In addition, the student can choose to take survey directly from his/her profile page as an alert will appear there 100 days after graduation. All survey answers are stored in the database which immediately updates the analytics. 
-
-Once a student completes the survey and states they are "employed" they become an "Alumni".
+Once a student completes the survey and states they are "employed" they become an "Alumnus".
 
 
 ##Team Members##
@@ -43,5 +39,5 @@ GitHub links for:
 
  
     
-Author: ALUMNUTS LLC
+Author: ALUMNUTS LLC  
 Creation Date: June 29, 2015
