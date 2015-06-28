@@ -23,7 +23,7 @@ Cohort.create([
   {name: 'Flatiron', officer_id: 1, start_date: Date.parse('2014/10/27'), end_date: Date.parse('2015/01/21')},
   {name: 'Tribeca', officer_id: 1, start_date: Date.parse('2015/04/27'), end_date: Date.parse('2015/07/21')}
   ])
-
+  
 Student.create([
   {name: 'Phil Lamplugh', email: 'philco@ga.co', password: "password", city: 'New York', state: 'New York', cohort_id: 8, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Jaden Carver', email: 'jaden.carver@ga.co', password: "password", city: 'New York', state: 'New York', cohort_id: 8, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},

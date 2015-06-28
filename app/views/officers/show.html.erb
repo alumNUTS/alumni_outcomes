@@ -54,7 +54,7 @@
 					<%= "#{cohort[:name]}" %>
 				</a>
 				<br>
-				<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
+				<small><%="Graduation Date: #{cohort[:day_graduated]}"%></small>
 				<br>
 				<% if cohort[:days_til_survey] < 100 || cohort[:days_til_survey].nil? %>
 					<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
@@ -66,7 +66,7 @@
 							<small><button id="send_survey">Send Survey</button></small>
 					</div><!--officer_survey-->
 					<% else %>
-						<small>Survey's sent</small>
+						<small>Survey status: Sent</small>
 					<% end %>
 				<% else %>
 					<small>Employment Rate: <em>Class has not graduated yet</em> </small>
@@ -95,7 +95,8 @@
 		<h2 class="charttext">Employment After 90 Days</h2>
 		</div>
 </div><!-- chart end -->
-
+  <p><%= image_tag 'yellow.png', size: '15x15'%> - Unemployed</p>
+  <p><%= image_tag 'blue.png', size: '15x15'%> - Employed</p>
 </div><!-- containter end -->
 
 

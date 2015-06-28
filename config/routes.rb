@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :officers, only: [:show] do
     resources :cohorts
     resources :analytics
-  end
+	end
 
 
 	resources :cohorts, only: [:show, :index] do
