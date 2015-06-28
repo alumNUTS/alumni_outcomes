@@ -70,19 +70,7 @@
 <canvas id="myLineChart" width="400" height="200">
 </canvas>
 
-<!-- determines how many tan people should be displayed based on total number of students -->
-<div class="person-tan">
-	<% for i in 1..@cohort.students.length %>
-		<div class="person"><%= image_tag "person_tan.svg" %></div>
-	<% end %>
-</div>
 
-<!-- determines how many people are employed, and displays that number as black people -->
-<div class="person-black">
-	<% for i in 1..@cohort.students.where(is_employed: true).length %>
-		<div id=<%=" person#{i} "%>><%= image_tag "person_black.svg" %></div>
-	<% end %>
-</div>
 
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'analytics' %>

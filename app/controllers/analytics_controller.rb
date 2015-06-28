@@ -3,7 +3,7 @@ class AnalyticsController < ApplicationController
  before_action :authorize
 
 	def show
-		if !is_student? && current_user.cohorts.exists?(params[:id])
+		if !is_student?
 			@cohort = Cohort.find(params[:id])
 			@students = Student.where(cohort_id: params[:id])
 			@days = (Date.today - @cohort.end_date).to_i
