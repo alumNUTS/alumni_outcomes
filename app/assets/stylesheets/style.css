@@ -25,18 +25,15 @@
 .person-tan {
 	width: 300px;
 	height: 200px;
-	position: absolute;
-	right: 100px;
-	top: 50px;
+
+
 
 }
 
 .person-black {
 	width: 300px;
 	height: 200px;
-	position: absolute;
-	right: 100px;
-	top: 50px;
+
 
 }
 
@@ -47,21 +44,25 @@
 	margin-top: -50px;
 }
 
+.employment_info{
+	display:none;
+}
+
 #person1, #person2, #person3, #person4, #person5, #person6, #person7, #person8, #person9, #person10, #person11, #person12, #person13, #person14, #person15, #person16, #person17, #person18, #person19, #person20, #person21, #person22, #person23, #person24, #person25, #person26, #person27, #person28, #person29, #person30 {
 	float: left;
 	width: 150px;
 	display: none;
 	margin-right: -100px;
 	margin-top: -50px;
-}	
+}
 
-.error_line {	
+.error_line {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 }
 
-.error_line_indent {	
+.error_line_indent {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
@@ -84,7 +85,7 @@
 .condensed_txt {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 300;
-	font-size: 20px; 
+	font-size: 20px;
 }
 
 .formbox2{
@@ -126,3 +127,78 @@
 .expanded {
     letter-spacing: 1px;
 }
+
+.stats-container{
+width: 1400px;
+margin-right: auto;
+margin-left: auto;
+}
+.statshead{
+	text-align: center;
+	margin: 20px;
+}
+
+
+.linechart{
+	margin: 30px;
+}
+#mylinechart{
+	background: #FEDD91;
+}
+.peoplechart{
+	margin: 20px;
+	width: 300px;
+	padding: 0;
+}
+.percent{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	float: left;
+	color: #222222;
+	font-size: 200px;
+	margin: 40px;
+}
+
+.cohortpiechart{
+float: left;
+
+}
+
+.cohortpiehead{
+		font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.cohortpiestat{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+
+.position_type{
+	float: left;
+	margin-left: 45px;
+}
+.dev_type{
+	float:left;
+	margin-left:10px;
+}
+.bar-chart_explanation {
+	clear: both;
+}
+
+.outcomes_pie_chart {
+	width: 320px;
+	clear: both;
+}
+.program_pie_chart {
+	clear: both;
+}
+

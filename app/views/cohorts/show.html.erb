@@ -1,7 +1,8 @@
 <header class="mainheader">
   <div class="container">
-      <div class='homebuttonDiv'>
-        <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+    <div class='homebuttonDiv'>
+    <!-- Adds Home button to the page based on user role -->
+      <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
         <% if is_student? %>
           <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
         <% else %>
@@ -9,46 +10,53 @@
         <% end %>
       <% end %>
     </div><!-- homediv -->
+
+    <!-- Adds the log out button if the user is log in -->
      <div class='logout'>
         <% if logged_in? %>
            <%= link_to "Logout", logout_path, method: "DELETE", class: 'logout' %>
         <% end %>
     </div><!-- logoutdiv -->
+
     <div class='center'>
         <%= image_tag "ALUMNUTS.svg", size: "400x180", class: 'mainlogo' %>
     </div><!-- image_div -->
   </div><!-- container_div -->
 </header>
 <div class="navbar">
+  <a class="navbar" href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
   </div>
 
+<div class="singlecohortcontainer">
 
+<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 
 <h1>Data about <%= @cohort.name %> </h1>
+<hr>
 <div>
 	<span>Cohort Name: </span><%= @cohort.name %> <br>
 	<span>Start Date: </span><%= @cohort.start_date %> <br>
 	<span>End Date: </span><%= @cohort.end_date %> <br>
 </div>
 
-<% if !is_student? && is_hundred_days?(@cohort.id) && @cohort.survey_sent == true %>
-  <%= link_to 'Survey\'s results', cohort_surveys_path(@cohort) %>
-<% elsif !is_student? && is_hundred_days?(@cohort.id) %>
-  <a href="/send_survey/<%=@cohort.id%>">Send Survey</a>
-<% end %>
-
-
+<div class="survey_controller" data-id="<%=@cohort.id%>">
+  <% if !is_student? && is_hundred_days?(@cohort.id) && @cohort.survey_sent == true %>
+    <%= link_to 'Survey\'s results', cohort_surveys_path(@cohort) %>
+  <% elsif !is_student? && is_hundred_days?(@cohort.id) && @cohort.officer_id == current_user.id %>
+    <button>Send Survey</button>
+  <% end %>
+</div>
 
 
 <h3>Students</h3>
-<ul>
+<hr>
+<ul class="officer_cohorts">
 	<% @cohort.students.each do |student| %>
 	<li>
-		<a href="/students/<%= student.id %>"><%= student.name %></a>
+		<a class="cohorttag" href="/students/<%= student.id %>"><%= student.name %></a>
 	</li>
 		<% end %>
 </ul>
 
-
-<a href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
+</div> <!-- container -->
 

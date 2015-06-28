@@ -1,3 +1,6 @@
+
+# updates the status of students to outcomes every day
+
 namespace :scheduler do
   desc "Updates the students' status to outcomes"
   task outcomes: :environment do
@@ -6,6 +9,7 @@ namespace :scheduler do
       if (Date.today - student.cohort.end_date) > 0
         student.status = "outcome"
         student.save
+        puts "updated students"
       end
     end
   end
