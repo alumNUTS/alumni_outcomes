@@ -1,9 +1,9 @@
 // window pop-up thanking for survey completion
 $(document).ready(function(){
-	
+
   $(".notice_survey").on("click", function(){
-		$(".notice").hide()
-	})
+        $(".notice").hide()
+    })
 
   //officer's page - sends email with the link to survey to all students in a specific cohort
   $(".officer_cohort").on("click", "#send_survey", function(event){

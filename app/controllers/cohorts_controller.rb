@@ -9,6 +9,9 @@ class CohortsController < ApplicationController
         @cohorts = Cohort.order("#{$sort} ASC")
       else
         @cohorts = Cohort.all
+      end
+
+        @cohorts = Cohort.all
         web_type = []
         position = []
         thru_outcomes = []
@@ -39,8 +42,7 @@ class CohortsController < ApplicationController
           @true += thru[true].to_f
           @false += thru[false].to_f
         end
-      end
-  		render :index
+  	 render :index
     else
       redirect_to '/errors/denied'
     end
