@@ -1,6 +1,6 @@
 <div>
   <%= form.hidden_field :cohort_id, value: @student.cohort.id %>
-  <span>Your name</span>
+  <span class="bold_txt">Your full name</span>
   <%= form.text_field :name, class: 'formbox2' %>
 </div>
 <br>
@@ -17,9 +17,8 @@
   <%= form.radio_button :employment_status, false %>Not Employed
 </div>
 <br>
-<div>
-	<p class="bold_txt">(If not employed, skip to question #5)<p>
-</div>
+<span class="expanded">[ If not employed, skip to question #5 ]</span>
+<br>
 <br>
 <div>
   <span class="bold_txt">3. What best describes your position?</span><br>
@@ -35,12 +34,11 @@
 </div>
 <br>
 <div>
-  <span class="bold_txt">5. Please share your Company Name</span>
-  <%= form.text_field :company %><br>
-  <span>and your Start Date</span>
-  <%= form.date_field :employment_date %>
+  <span class="bold_txt">5. Your employer's name</span>
+  <%= form.text_field :company, class: 'formbox2' %>
+  <span class="bold_txt">and your start date</span>
+  <%= form.date_field :employment_date, class: 'formbox4' %>
 </div>
-<br>
 <div>
   <span class="bold_txt">6. The technical skills I learned during my immersive course has properly prepared me for real-life work environments.</span><br>
   <%= form.radio_button :enough_preparation, 1 %>I disagree
@@ -58,21 +56,18 @@
 </div>
 <br>
 <div>
-	<p class="bold_txt">Tell us in your own words:<p>
-</div>
-<div>
-  <span class="bold_txt">8. What hard/soft skills that you didn’t learn while at GA would have better prepared you post-graduation, whether or not you’ve already found a job.</span><br>
-  <%= form.text_field :should_have_learned %>
+  <span class="bold_txt">8. What hard/soft skills that you didn’t learn while at ALUMNUTS would have better prepared you post-graduation, whether or not you’ve already found a job.</span><br>
+  <%= form.text_field :should_have_learned, class: 'formbox3' %>
 </div>
 <br>
 <div>
   <span class="bold_txt">9. If you’re currently not employed, what are some hurdles you’ve encountered during your job search?</span><br>
-  <%= form.text_field :hurdles %>
+  <%= form.text_field :hurdles, class: 'formbox3' %>
 </div>
 <br>
 <div>
   <span class="bold_txt">10. Anything else you want to say?</span><br>
-  <%= form.text_field :anything_else %>
+  <%= form.text_field :anything_else, class: 'formbox3' %>
 </div>
 
 

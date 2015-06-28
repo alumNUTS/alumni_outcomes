@@ -25,7 +25,14 @@
 .error_line {	
 	color: white;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 12px;
+	font-size: 13px;
+}
+
+.error_line_indent {	
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	margin-left: 10%;
 }
 
 .centered {
@@ -34,23 +41,55 @@
 
 .body_txt {
 	font-family: 'Open Sans', sans-serif;
+	margin: 10%;
 }
 
 .bold_txt {
 	font-weight: bold;
 }
 
+.condensed_txt {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 300;
+	font-size: 20px; 
+}
+
 .formbox2{
-	width: 324px;
+	width: 280px;
 	border: none;
-	height: 15px;
+	height: 10px;
 	margin-bottom: 20px;
 	padding: 10px;
-	font-size: 15px;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #5A5A5A;
 }
 
+.formbox3{
+	width: 900px;
+	border: none;
+	height: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #5A5A5A;
+}
 
+.formbox4{
+	width: 140px;
+	border: none;
+	height: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color: #5A5A5A;
+}
 
+.expanded {
+    letter-spacing: 1px;
+}
