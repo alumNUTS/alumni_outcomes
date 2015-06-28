@@ -33,7 +33,8 @@
 <div class="cohortcontainter">
 
 	<div class="notice_board">
-  <h3>Notice board</h3>
+  <h3 class="noticehead">Notice board</h3>
+  <hr>
   <p>Don't forget to send surveys to:
   <% @officer.cohorts.each do |cohort| %>
     <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>

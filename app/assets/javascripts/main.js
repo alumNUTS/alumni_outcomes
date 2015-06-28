@@ -106,7 +106,7 @@ if( $("#myBarChart").get(0) != undefined && $("#mySurveyPieChart").get(0) != und
     var dataPie = [
         {
           value: outcomesHelped,
-          color:"#F7464A",
+          color:"#AB1919",
           highlight: "#FF5A5E",
           label: "Red"
         },
@@ -173,7 +173,7 @@ if( $("#myBarChart").get(0) != undefined && $("#mySurveyPieChart").get(0) != und
       var dataProgramPie = [
         {
             value: outcomesProgramHelped,
-            color:"#F7464A",
+            color:"#AB1919",
             highlight: "#FF5A5E",
             label: "Red"
         },

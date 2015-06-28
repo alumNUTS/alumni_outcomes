@@ -69,6 +69,21 @@ margin-bottom: 20px;
 margin-left: 0;
 }
 
+.notice_board{
+	background: #x96BBCE;
+	width: 600px;
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+.noticehead{
+	font-size: 30px;
+	padding: 0;
+	margin: 0;
+}
+
 
 .officerprofile{
 	float: left;
@@ -278,6 +293,32 @@ label{
 	color: #272822;
 }
 
+.submit_edit{
+	border: none;
+	background-color: #CC2014;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	width: 250px;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #272822;
+}
+
+.clear{
+	border: none;
+	background-color: #FFE3B3;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 22px;
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	color: #272822;
+}
+
 .btn{
 	width: 380px;
 	border: none;
@@ -378,7 +419,9 @@ margin-top: 30px;
 }
 
 
-
+.position_type{
+	margin-bottom: 30px;
+}
 
 .allstudentcontainter{
 	width: 380px;
@@ -403,3 +446,18 @@ margin-top: 30px;
 	border-radius: 20px;
 }
 
+.deletebutton{
+	border: none;
+	width: 100px;
+	height: 40px;
+border-radius: 10px;
+	background: #CC1F14;
+		font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 12px;
+	color: #222222;
+}
+
+.takesurvey{
+	color: #222222;
+}

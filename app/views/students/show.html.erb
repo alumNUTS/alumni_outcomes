@@ -88,7 +88,7 @@
       <% if @student.survey_complete %>
         COMPLETED
       <% else %>
-        PENDING <%= link_to 'Take a survey', new_student_survey_path(@student)%>
+        PENDING <%= link_to 'Take a survey', new_student_survey_path(@student), class: 'takesurvey'%>
       <% end %>
       </p>
     <% end %>
@@ -96,7 +96,7 @@
 
     <% if students_page? %>
       <%= form_tag(student_path, method: :delete) %>
-      <%= submit_tag 'Delete profile' %>
+      <%= submit_tag 'Delete profile', class: 'deletebutton' %>
     <% end %>
 
   </div><!-- studentprofile -->
