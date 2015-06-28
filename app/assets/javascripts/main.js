@@ -107,7 +107,7 @@ $(document).ready(function(){
     var dataPie = [
         {
           value: outcomesHelped,
-          color:"#F7464A",
+          color:"#AB1919",
           highlight: "#FF5A5E",
           label: "Red"
         },
@@ -174,7 +174,7 @@ $(document).ready(function(){
       var dataProgramPie = [
         {
             value: outcomesProgramHelped,
-            color:"#F7464A",
+            color:"#AB1919",
             highlight: "#FF5A5E",
             label: "Red"
         },

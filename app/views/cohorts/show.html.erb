@@ -43,7 +43,7 @@
   <% if !is_student? && is_hundred_days?(@cohort.id) && @cohort.survey_sent == true %>
     <%= link_to 'Survey\'s results', cohort_surveys_path(@cohort) %>
   <% elsif !is_student? && is_hundred_days?(@cohort.id) && @cohort.officer_id == current_user.id %>
-    <button>Send Survey</button>
+    <button id="send_survey">Send Survey</button>
   <% end %>
 </div>
 
