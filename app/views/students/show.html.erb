@@ -37,7 +37,9 @@
 <div class="navbar">
 <%= link_to 'View cohort', @student.cohort, class: 'navbar' %>
 
-<a class="navbar" href="mailto:<%= @student.cohort.officer.email %>">Contact Instructor</a>
+<% if is_student? %>
+  <a class="navbar" href="mailto:<%= @student.cohort.officer.email %>">Contact Officer</a>
+<% end %>
 
 <% if students_page? %>
   <%= link_to "Edit", edit_student_path(@student), class: 'navbar' %>

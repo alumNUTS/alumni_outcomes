@@ -25,7 +25,6 @@ Cohort.create([
 Student.create([
   {name: 'Bobby King', email: 'king.robertjoseph@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
-  {name: 'Dasha Murauyova', email: 'dashamuravjova@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Mark Paulson', email: 'markpaulson1@hotmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Orin Xie', email: 'orin.xie@gmail.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS,Jquery, JSON'},
   {name: 'Domenica LaLima', email: 'dlalima@yahoo.com', password: "password", city: 'New York', state: 'New York', cohort_id: 1, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS, Jquery, JSON'},
