@@ -42,7 +42,6 @@ class SurveysController < ApplicationController
 
 
   def index
-    binding.pry
     if !is_student? && current_user.cohorts.exists?(params[:cohort_id])
       @cohort = Cohort.find(params[:cohort_id])
       @web_dev_type = @cohort.surveys.group(:web_dev_type).count

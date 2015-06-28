@@ -47,11 +47,8 @@ $(document).ready(function(){
         $(".survey_controller").append(survey_sent);
       })
 
-
-
-
-	//silhoutte animation
-	var count = 1
+  //silhoutte animation
+  var count = 1
   var starting = setInterval(function () {
     $('#person' + count).fadeIn(100)
     count += 1
@@ -68,10 +65,10 @@ $(document).ready(function(){
   var full_time = $('.cohort_stats').data('fulltime');
   var temp = $('.cohort_stats').data('temptoperm');
   var freelance = $('.cohort_stats').data('freelance');
-
+if( $("#myBarChart").get(0) != undefined && $("#mySurveyPieChart").get(0) != undefined){
   //dev type bar chart for a particular cohort
   var ctxB = $("#myBarChart").get(0).getContext("2d");
-  var ctxP = $("#myPieChart").get(0).getContext("2d");
+  var ctxP = $("#mySurveyPieChart").get(0).getContext("2d");
   var data = {
       labels: ["Type", "Position"],
       datasets: [
@@ -105,7 +102,7 @@ $(document).ready(function(){
     var outcomesHelped = $('.cohort_stats').data('outcomesHelped');
     var outcomesNotHelped = $('.cohort_stats').data('outcomesNoHelp');
 
-    //pie chart - effectiveness of the outcomes program for a particular cohort
+//pie chart - effectiveness of the outcomes program for a particular cohort
     var dataPie = [
         {
           value: outcomesHelped,
@@ -121,10 +118,10 @@ $(document).ready(function(){
         },
     ];
     var myBarChart = new Chart(ctxB).Bar(data);
-    var myPieChart = new Chart(ctxP).Pie(dataPie)
+    var mySurveyPieChart = new Chart(ctxP).Pie(dataPie)
+}
 
 });
-
   // data for a bar chart for the whole program
   var fullStack = $('.program_stats').data('fullStack');
   var frontEnd = $('.program_stats').data('frontEnd');
@@ -134,7 +131,7 @@ $(document).ready(function(){
   var freelanceP = $('.program_stats').data('freelance');
 
   //bar chart for the whole program
-
+  if($("#myProgramBarChart").get(0) != undefined && $("#myProgramPieChart").get(0) != undefined){
   var ctxBP = $("#myProgramBarChart").get(0).getContext("2d");
   var dataBP = {
       labels: ["Type", "Position"],
@@ -189,3 +186,4 @@ $(document).ready(function(){
       ];
 
   var myProgramPieChart = new Chart(ctxPP).Pie(dataProgramPie)
+}

@@ -26,7 +26,7 @@
 	width: 300px;
 	height: 200px;
 
-	
+
 
 }
 
@@ -54,15 +54,15 @@
 	display: none;
 	margin-right: -100px;
 	margin-top: -50px;
-}	
+}
 
-.error_line {	
+.error_line {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 }
 
-.error_line_indent {	
+.error_line_indent {
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
@@ -85,7 +85,7 @@
 .condensed_txt {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 300;
-	font-size: 20px; 
+	font-size: 20px;
 }
 
 .formbox2{
@@ -171,7 +171,7 @@ float: left;
 	text-align: center;
 	margin-bottom: 10px;
 }
-<<<<<<< HEAD
+
 .cohortpiestat{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
@@ -180,7 +180,7 @@ float: left;
 	margin-top: 10px;
 }
 
-=======
+
 
 .position_type{
 	float: left;
@@ -201,4 +201,4 @@ float: left;
 .program_pie_chart {
 	clear: both;
 }
->>>>>>> saturday_branch_dasha
+
