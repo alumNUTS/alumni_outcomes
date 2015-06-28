@@ -21,8 +21,8 @@
 		<%= form_for ([@student, @survey]) do |form| %>
 		  <%= render form %>
 		  <div class="actions">
-			  <div class="submit_survey"><%= form.submit 'Submit' %></div>
-		      <%= form.submit "clear", :type => "reset" %>
+			  <div class="submit_survey"><%= form.submit 'Submit', id: 'send_survey' %></div>
+		      <%= form.submit "clear", :type => "reset", id: 'send_survey' %>
 		  </div>
 		<% end %>
 	<% else %>

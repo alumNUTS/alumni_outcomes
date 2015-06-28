@@ -1,14 +1,5 @@
- <div class='homebuttonDiv'>
-    <!-- Adds Home button to the page based on user role -->
-      <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
-        <% if is_student? %>
-          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
-        <% else %>
-          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
-        <% end %>
-      <% else %>
-        <%= link_to "Home", root_path, class: 'homebutton' %>
-      <% end %>
-</div><!-- homediv -->
 
-<h1>PERMISSION DENIED</h1>
+<div class="error_page">
+  <h1>PERMISSION DENIED</h1>
+  <%= image_tag 'squirrel-1.svg', size: '600x600' %>
+</div>

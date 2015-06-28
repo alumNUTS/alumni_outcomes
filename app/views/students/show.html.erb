@@ -51,14 +51,16 @@
 
 
 
-<div class="profilecontainer">
+<div class="cohortcontainter">
 
-    <div class="pic">
-       <%= image_tag gravatar_url(@student.email, '100x100') %>
-    </div>
+
+
 
     <div class="studentprofile">
     <h1 class="studenthead"><%= @student.name %></h1>
+    <div class = "pic">
+      <%= image_tag gravatar_url(@student.email, '100x100') %>
+    </div>
     <h3><%= @student.status %></h3>
     <hr>
     <p>Cohort: <%= @student.cohort.name %></p>
@@ -86,10 +88,10 @@
       <% if @student.survey_complete %>
         COMPLETED
       <% else %>
-        Not Yet Completed 
+        Not Yet Completed
         <% if is_student? %>
           <%= link_to 'Take a survey', new_student_survey_path(@student), class: 'takesurvey'%>
-        <% end %> 
+        <% end %>
       <% end %>
       </p>
     <% end %>
@@ -111,9 +113,7 @@
 <%= javascript_include_tag 'main' %>
 
 
-  <footer>
-    <p>©Copyright AlumNuts LLC</p>
-  </footer>
+
 
 
 
