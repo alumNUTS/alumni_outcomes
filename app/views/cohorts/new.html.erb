@@ -23,7 +23,7 @@
   </div>
 
 
-
+<div class="cohortnewcontainer">
 <h1>Create a New Cohort</h1>
  <ul>
     <% @cohort.errors.full_messages.each do |message| %>
@@ -33,6 +33,7 @@
 <%= form_for  [@officer, @cohort] do |form| %>
   <%= render form %>
   <div class="actions">
-    <%= form.submit 'Submit' %>
+    <%= form.submit 'Submit', class: 'submit' %>
   </div>
 <% end %>
+</div>

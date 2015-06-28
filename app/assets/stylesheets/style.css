@@ -25,18 +25,15 @@
 .person-tan {
 	width: 300px;
 	height: 200px;
-	position: absolute;
-	right: 100px;
-	top: 50px;
+
+	
 
 }
 
 .person-black {
 	width: 300px;
 	height: 200px;
-	position: absolute;
-	right: 100px;
-	top: 50px;
+
 
 }
 
@@ -126,3 +123,55 @@
 .expanded {
     letter-spacing: 1px;
 }
+
+.stats-container{
+width: 1400px;
+margin-right: auto;
+margin-left: auto;
+}
+.statshead{
+	text-align: center;
+	margin: 20px;
+}
+
+
+.linechart{
+	margin: 30px;
+}
+#mylinechart{
+	background: #FEDD91;
+}
+.peoplechart{
+	margin: 20px;
+	width: 300px;
+	padding: 0;
+}
+.percent{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	float: left;
+	color: #222222;
+	font-size: 200px;
+	margin: 40px;
+}
+
+.cohortpiechart{
+float: left;
+
+}
+
+.cohortpiehead{
+		font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.cohortpiestat{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 10px;
+}
+
