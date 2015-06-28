@@ -22,82 +22,89 @@
 <div class="navbar">
 	</div>
 
+<div class="cohortsandchartscontainter">
 
-<div class="allcohortcontainter">
+  <div class="allcohortcontainter">
+  <h1>All Cohorts</h1>
+  <hr>
+  <div>
+  	<form action="/cohorts/sort" method="POST" id="sort_by">
+  	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  			Sort by:
+  			<select name="sort_by" id="sort_by">
+  				<option value="name">Cohort Name (alphabetically)</option>
+  				<option value="officer_id">Officer Name</option>
+  				<option value="start_date">Start Date</option>
+  				<option value="end_date">End Date</option>
+  			</select>
+  			<input type="submit" value="Submit" class='cohort_submit'>
+  		</form>
+  </div>
 
-<h1>All Cohorts</h1>
-<hr>
-<div>
-	<form action="/cohorts/sort" method="POST" id="sort_by">
-	<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-			Sort by:
-			<select name="sort_by" id="sort_by">
-				<option value="name">Cohort Name (alphabetically)</option>
-				<option value="officer_id">Officer Name</option>
-				<option value="start_date">Start Date</option>
-				<option value="end_date">End Date</option>
-			</select>
-			<input type="submit" value="Submit" class='cohort_submit'>
-		</form>
-</div>
+  	<div>
+  		<ul class="officer_cohorts">
+  			<% @cohorts.each do |cohort| %>
+  			<div class = "officer_cohort">
+  			<li>
+  				<a class="cohorttag" href="/cohorts/<%= cohort.id %>"><%= cohort.name %></a>
+  				<br>
+  				<span>Start Date: </span><%= cohort.start_date %>
+  				<br>
+  				<span>End Date: </span><%= cohort.end_date %>
+  				<br>
+  				<span>Officer: </span><%= cohort.officer.name %>
+  			<% end %>
+  			</li>
+  			</div>
+  		</ul>
+  	</div>
 
-	<div>
-		<ul class="officer_cohorts">
-			<% @cohorts.each do |cohort| %>
-			<div class = "officer_cohort">
-			<li>
-				<a class="cohorttag" href="/cohorts/<%= cohort.id %>"><%= cohort.name %></a>
-				<br>
-				<span>Start Date: </span><%= cohort.start_date %>
-				<br>
-				<span>End Date: </span><%= cohort.end_date %>
-				<br>
-				<span>Officer: </span><%= cohort.officer.name %>
-			<% end %>
-			</li>
-			</div>
-		</ul>
-	</div>
+  </div> <!-- allcohortcontainer -->
 
-
-</div>
-
-<div class = "bar_chart_program">
-  <canvas id="myProgramBarChart" width="300" height="300" style="float: left;">
-  </canvas>
-    <div class="bar-chart_explanation">
-    <div class="dev_type">
-      <h3>Type:</h3>
-      <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Stack</p>
-      <p><%= image_tag 'blue.png', size: '15x15'%> - Front-End</p>
-      <p><%= image_tag 'green.png', size: '15x15'%> - Back-End</p>
-    </div><!--dev-type-->
-    <div class="position_type">
-      <h3>Position:</h3>
-      <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Time</p>
-      <p><%= image_tag 'blue.png', size: '15x15'%> - Temp-To-Perm</p>
-      <p><%= image_tag 'green.png', size: '15x15'%> - Freelance</p>
-    </div><!--position_type-->
-  </div><!--bar_chart_explanation-->
-</div>
-
-
-<div class="program_pie_chart">
-<canvas id="myProgramPieChart" width="300" height="300">
-  </canvas>
-   <div class="pie-chart_explanation">
-    <div class="outcome_help">
-      <h3>Did you find the position through our Outcomes Program?</h3>
-      <p><%= image_tag 'red.png', size: '15x15'%> - True</p>
-      <p><%= image_tag 'sky_blue.png', size: '15x15'%> - False</p>
-    </div><!--dev-type-->
-   </div><!--pie-chart explanation-->
+<div class="chartscontainer">
+  <h2>Employment Infomation</h2>
+  <div class = "bar_chart_program">
+    <canvas id="myProgramBarChart" width="300" height="300" style="float: left;">
+    </canvas>
+      <div class="bar-chart_explanation">
+      <div class="dev_type">
+        <h3>Type:</h3>
+        <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Stack</p>
+        <p><%= image_tag 'blue.png', size: '15x15'%> - Front-End</p>
+        <p><%= image_tag 'green.png', size: '15x15'%> - Back-End</p>
+      </div><!--dev-type-->
+      <div class="position_type">
+        <h3>Position:</h3>
+        <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Time</p>
+        <p><%= image_tag 'blue.png', size: '15x15'%> - Temp-To-Perm</p>
+        <p><%= image_tag 'green.png', size: '15x15'%> - Freelance</p>
+      </div><!--position_type-->
+    </div><!--bar_chart_explanation-->
+      <%= content_tag :div, class: 'program_stats', data:{ full_stack: @full_stack, front_end: @front_end, back_end: @back_end, full_time: @full_time, temp_to_perm: @temp_to_perm, freelance: @freelance,outcomes_helped: @true, outcomes_no_help: @false } do %>
+  <% end %>
   </div>
 
 
+  <div class="program_pie_chart">
+    <h2>Outcomes Effectiveness</h2>
+  <canvas id="myProgramPieChart" width="300" height="300">
+    </canvas>
+     <div class="pie-chart_explanation">
+      <div class="outcome_help">
+        <h3>Did you find the position through <br> our Outcomes Program?</h3>
+        <p><%= image_tag 'red.png', size: '15x15'%> - True</p>
+        <p><%= image_tag 'sky_blue.png', size: '15x15'%> - False</p>
+      </div><!--dev-type-->
+     </div><!--pie-chart explanation-->
+    </div>
 
-<%= content_tag :div, class: 'program_stats', data:{ full_stack: @full_stack, front_end: @front_end, back_end: @back_end, full_time: @full_time, temp_to_perm: @temp_to_perm, freelance: @freelance,outcomes_helped: @true, outcomes_no_help: @false } do %>
-<% end %>
+
+
+
+</div> <!--  chartscontatiner -->
+
+</div> <!-- cohortsandchartscontainer-->
+
 
 <%= javascript_include_tag 'chart' %>
 <%= javascript_include_tag 'main' %>

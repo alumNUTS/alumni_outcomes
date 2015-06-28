@@ -29,8 +29,12 @@
 <h1>Welcome, <%=@officer.name%></h1>
 </div>
 
-<div class="notice_board">
-  <h3>Notice board</h3>
+
+<div class="cohortcontainter">
+
+	<div class="notice_board">
+  <h3 class="noticehead">Notice board</h3>
+  <hr>
   <p>Don't forget to send surveys to:
   <% @officer.cohorts.each do |cohort| %>
     <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
@@ -39,8 +43,6 @@
   <% end %>
 </div><!--notice board-->
 
-<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
-<div class="cohortcontainter">
   <div class='officerprofile'>
 	 <big>My Cohorts:</big>
 	 <hr>
@@ -82,7 +84,7 @@
 
 <div class="chart">
 	<div class="chartheadbox">
-	<h2>Chart Headline</h2>
+	<h2 class="charthead">Chart Headline</h2>
 </div>
 	<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
 <% end %>
@@ -90,7 +92,7 @@
 </canvas><br>
 <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
    	<div class="chartheadbox">
-		<h2>Statistic of Chart Here</h2>
+		<h2 class="charttext">Statistic of Chart Here</h2>
 		</div>
 </div><!-- chart end -->
 
