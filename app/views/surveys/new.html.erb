@@ -4,22 +4,30 @@
 		</div><!-- imagediv -->
 </header>
 
-<%= @error %>
-<h1>Welcome to the ALUMNUTS 100-Day Survey</h1>
+<br>
+<div class="error_line_indent">
+	<%= @error %>
+</div>
 
-<p>Please complete our survey to help us gauge the success of our programs and future graduates.</p>
-<p>* Indicates that a response is required.</p>
+<div class="body_txt">
+	<h1 class="centered">Welcome to the ALUMNUTS 100-Day Survey</h1>
 
-<% if @student.survey_complete != true %>
-	<%= form_for ([@student, @survey]) do |form| %>
-	  <%= render form %>
-	  <div class="actions">
-	    <div class="submit_survey"><%= form.submit 'Submit' %></div>
-      <%= form.submit "clear", :type => "reset" %>
-	  </div>
+	<p class="bold_txt">Please complete our survey to help us gauge the success of our programs and future graduates.</p>
+	<br>
+	<br>
+	<p class="error_line">*  Indicates that a response is required.</p>
+
+	<% if @student.survey_complete != true %>
+		<%= form_for ([@student, @survey]) do |form| %>
+		  <%= render form %>
+		  <div class="actions">
+			  <div class="submit_survey"><%= form.submit 'Submit' %></div>
+		      <%= form.submit "clear", :type => "reset" %>
+		  </div>
+		<% end %>
+	<% else %>
+		<p class="error_line"> Uh oh. You can only submit this survey once. </p>
 	<% end %>
-<% else %>
-	<p>  Uh oh. You can only submit this survey once. </p>
-<% end %>
 
+</div>
 

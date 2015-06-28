@@ -5,6 +5,42 @@
 </header>
 
 
+<div class="position_type_chart">
+  <canvas id="myBarChart" width="300" height="300" style="float: left;">
+  </canvas>
+  <div class="bar-chart_explanation">
+    <div class="dev_type">
+      <h3>Type:</h3>
+      <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Stack</p>
+      <p><%= image_tag 'blue.png', size: '15x15'%> - Front-End</p>
+      <p><%= image_tag 'green.png', size: '15x15'%> - Back-End</p>
+    </div><!--dev-type-->
+    <div class="position_type">
+      <h3>Position:</h3>
+      <p><%= image_tag 'yellow.png', size: '15x15'%> - Full-Time</p>
+      <p><%= image_tag 'blue.png', size: '15x15'%> - Temp-To-Perm</p>
+      <p><%= image_tag 'green.png', size: '15x15'%> - Freelance</p>
+    </div><!--position_type-->
+  </div><!--bar_chart_explanation-->
+</div><!--position_type chart-->
+
+
+<div class="outcomes_pie_chart">
+<canvas id="myPieChart" width="300" height="300">
+  </canvas>
+   <div class="pie-chart_explanation">
+    <div class="outcome_help">
+      <h3>Did you find the position through our Outcomes Program?</h3>
+      <p><%= image_tag 'red.png', size: '15x15'%> - True</p>
+      <p><%= image_tag 'sky_blue.png', size: '15x15'%> - False</p>
+    </div><!--dev-type-->
+   </div><!--pie-chart explanation-->
+  </div>
+
+
+<%= content_tag :div, class: 'cohort_stats', data:{ fullStack: @web_dev_type[1], frontEnd: @web_dev_type[2], backEnd: @web_dev_type[3], fullTime: @position_type[1], tempToPerm: @position_type[2], freelance: @position_type[3], outcomes_helped: @thru_outcomes[true], outcomes_no_help: @thru_outcomes[false] } do %>
+<% end %>
+
 <% @cohort.surveys.each do |survey| %>
   <% if survey.name.nil? %>
     <%= link_to 'Anonymous', [@cohort, survey] %>
@@ -12,3 +48,6 @@
     <%= link_to survey.name, [@cohort, survey] %>
   <% end %>
 <% end %>
+
+<%= javascript_include_tag 'chart' %>
+<%= javascript_include_tag 'main' %>

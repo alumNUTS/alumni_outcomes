@@ -16,9 +16,17 @@
   <% end %>
 </ul>
 <%= form_for @student do |form| %>
+  <div>
+    <%= form.label :cohort_id %><br>
+    <%= form.select(:cohort_id, options_from_collection_for_select(@cohorts, :id, :name), class: "formbox cohort", id: 'cohortbox') %>
+  </div>
+  <div class="cohort_error"></div>
   <%= render form %>
+
+
   <div class="actions">
-    <%= form.submit 'Sign Up!' %>
+    <%= form.submit 'Sign Up!', class: 'submit' %>
+    <%= form.submit "clear", :type => "reset" %>
   </div>
 <% end %>
 
