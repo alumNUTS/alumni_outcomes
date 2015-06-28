@@ -40,6 +40,8 @@ Rails.application.configure do
 
   config.assets.precompile += %w( chart.js )
 
+  config.assets.precompile += %w( officer-analytics.js )
+
   config.assets.precompile += %w( analytics.js )
 
   config.assets.precompile += %w( main.js )

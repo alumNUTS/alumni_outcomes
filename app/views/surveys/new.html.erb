@@ -21,11 +21,13 @@
 		<%= form_for ([@student, @survey]) do |form| %>
 		  <%= render form %>
 		  <div class="actions">
-		    <div class="submit_survey"><%= form.submit 'Submit' %></div>
+			  <div class="submit_survey"><%= form.submit 'Submit' %></div>
+		      <%= form.submit "clear", :type => "reset" %>
 		  </div>
 		<% end %>
 	<% else %>
 		<p class="error_line"> Uh oh. You can only submit this survey once. </p>
 	<% end %>
+
 </div>
 

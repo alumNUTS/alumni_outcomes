@@ -1,27 +1,27 @@
 
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name, class: 'formbox'  %>
+    <%= form.text_field :name, class: 'formbox name'  %>
   </div>
+  <div class="name_errors"></div>
 <div>
   <%= form.label :email %><br>
-  <%= form.email_field :email, class: 'formbox' %>
+  <%= form.email_field :email, class: 'formbox email' %>
 </div>
+<div class="email_error"></div>
   <div>
     <%= form.label "Password" %><br>
-    <%= form.password_field :password, class: 'formbox'  %>
+    <%= form.password_field :password, class: 'formbox password'  %>
   </div>
+  <div class="password_errors"></div>
 <div>
   <%= form.label "Confirm password" %><br>
-  <%= form.password_field :password_confirmation, class: 'formbox'  %>
+  <%= form.password_field :password_confirmation, class: 'formbox confirmation'  %>
 </div>
-  <div>
-    <%= form.label :cohort_id %><br>
-    <%= form.select(:cohort_id, options_from_collection_for_select(@cohorts, :id, :name), id: 'cohortbox') %>
-  </div>
+<div class="confirmation_error"></div>
 <div>
   <%= form.label :phone_number %><br>
-  <%= form.text_field :phone_number, class: 'formbox'  %>
+  <%= form.text_field :phone_number, class: 'formbox', placeholder: 'Enter number with no hypens'  %>
 </div>
   <div>
     <%= form.label :city %><br>
@@ -39,12 +39,15 @@
   <%= form.label :is_employed %>
   <%= form.check_box :is_employed, class: 'checkbox' %>
 </div>
+<div class="employment_info">
   <div>
     <%= form.label :employment_date %><br>
     <%= form.date_field :employment_date %>
   </div>
-<div>
-  <%= form.label :company_name %><br>
-  <%= form.text_field :company_name, class: 'formbox'  %>
+  <div>
+    <%= form.label :company_name %><br>
+    <%= form.text_field :company_name, class: 'formbox'  %>
+  </div>
+
 </div>
 

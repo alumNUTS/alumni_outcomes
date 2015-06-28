@@ -3,27 +3,32 @@ class StudentsController < ApplicationController
   before_action :authorize, except: [:create, :new, :show]
   helper_method :students_page?
   def show
-    if logged_in?
-      if is_student? && (!current_user.cohort.students.exists?(params[:id]))
-        redirect_to "/students/#{session[:user_id]}"
-      else
-        @student = Student.find(params[:id])
-      end
+    if is_student? && (!current_user.cohort.students.exists?(params[:id]))
+      redirect_to "/students/#{session[:user_id]}"
     else
-      redirect_to '/'
+      @student = Student.find(params[:id])
+      if @student.is_employed && @student.survey_complete
+        @student.status = "alumnus"
+        @student.save
+      end
     end
   end
 
   def index
-    @students = Student.all
-    if session[:user_type] == 'student'
-      redirect_to "/students/#{session[:user_id]}"
+    if !is_student?
+      if params[:search]
+        @students = Student.search(params[:search]).order("created_at DESC")
+      else
+        @students = Student.all
+      end
+    else
+      redirect_to "/errors/denied"
     end
   end
 
   def new
-    @student = Student.new
-    @cohorts = Cohort.all
+      @student = Student.new
+      @cohorts = Cohort.all
   end
 
   def create
@@ -39,12 +44,16 @@ class StudentsController < ApplicationController
   end
 
 	def edit
-		@student = Student.find(params[:id])
-    @cohorts = Cohort.all
+    if is_student?
+  		@student = Student.find(session[:user_id])
+      @cohorts = Cohort.all
+    else
+      redirect_to '/errors/denied'
+    end
 	end
 
   def update
-    @student = Student.find(params[:id])
+    @student = Student.find(session[:user_id])
 
 	  if @student.update(student_params)
 		  redirect_to @student
@@ -76,7 +85,3 @@ class StudentsController < ApplicationController
 
 
 end
-
-
-
-

@@ -1,0 +1,14 @@
+ <div class='homebuttonDiv'>
+    <!-- Adds Home button to the page based on user role -->
+      <% if logged_in? && request.fullpath != "/" && request.fullpath != "/login"%>
+        <% if is_student? %>
+          <%= link_to "Home", student_path(current_user), class: 'homebutton' %>
+        <% else %>
+          <%= link_to "Home", officer_path(current_user), class: 'homebutton' %>
+        <% end %>
+      <% else %>
+        <%= link_to "Home", root_path, class: 'homebutton' %>
+      <% end %>
+</div><!-- homediv -->
+<h1>ERROR<h1>
+<h1>ROUTE NOT FOUND</h1>
