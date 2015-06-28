@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     resources :surveys, only: [:show, :index]
   end
 
-  get "*path" => redirect("/error")
+  resources :errors, only: [:index, :show]
+
+  get "*path" => redirect("/errors")
 
 end

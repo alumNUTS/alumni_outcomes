@@ -20,11 +20,6 @@
 </div>
 <div class="confirmation_error"></div>
 <div>
-  <%= form.label :cohort_id %><br>
-  <%= form.select(:cohort_id, options_from_collection_for_select(@cohorts, :id, :name), class: "formbox cohort", id: 'cohortbox') %>
-</div>
-<div class="cohort_error"></div>
-<div>
   <%= form.label :phone_number %><br>
   <%= form.text_field :phone_number, class: 'formbox', placeholder: 'Enter number with no hypens'  %>
 </div>
@@ -53,5 +48,6 @@
     <%= form.label :company_name %><br>
     <%= form.text_field :company_name, class: 'formbox'  %>
   </div>
+
 </div>
 

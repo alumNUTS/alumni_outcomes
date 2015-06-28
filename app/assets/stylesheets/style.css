@@ -171,6 +171,7 @@ float: left;
 	text-align: center;
 	margin-bottom: 10px;
 }
+<<<<<<< HEAD
 .cohortpiestat{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
@@ -179,3 +180,25 @@ float: left;
 	margin-top: 10px;
 }
 
+=======
+
+.position_type{
+	float: left;
+	margin-left: 45px;
+}
+.dev_type{
+	float:left;
+	margin-left:10px;
+}
+.bar-chart_explanation {
+	clear: both;
+}
+
+.outcomes_pie_chart {
+	width: 320px;
+	clear: both;
+}
+.program_pie_chart {
+	clear: both;
+}
+>>>>>>> saturday_branch_dasha

@@ -1,7 +1,10 @@
 class ErrorsController < ApplicationController
 
 	def index
-		render :index
 	end
+
+  def denied
+    render :show
+  end
 
 end

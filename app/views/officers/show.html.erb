@@ -29,44 +29,50 @@
 <h1>Welcome, <%=@officer.name%></h1>
 </div>
 
+<div class="notice_board">
+  <h3>Notice board</h3>
+  <p>Don't forget to send surveys to:
+  <% @officer.cohorts.each do |cohort| %>
+    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
+      <span><%= cohort.name %></span>
+    <% end %>
+  <% end %>
+</div><!--notice board-->
 
-
+<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 <div class="cohortcontainter">
-
-
-<div class='officerprofile'>
-	<big>My Cohorts:</big>
-	<hr>
-	<ul class="officer_cohorts">
+  <div class='officerprofile'>
+	 <big>My Cohorts:</big>
+	 <hr>
+	 <ul class="officer_cohorts">
 		<% @cohort_stats.each do |cohort| %>
-
-				<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
-				<li>
-					<a class="cohorttag" href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
-						<%= "#{cohort[:name]}" %>
-					</a>
+			<div class = "officer_cohort" data-id = "<%= cohort[:id] %>">
+			<li>
+				<a class="cohorttag" href=<%="#{@officer.id}/cohorts/#{cohort[:id]}"%>>
+					<%= "#{cohort[:name]}" %>
+				</a>
+				<br>
+				<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
+				<br>
+				<% if cohort[:days_til_survey] < 100 || cohort[:days_til_survey].nil? %>
+					<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
 					<br>
-					<small><%="Gratuation Date: #{cohort[:day_graduated]}"%></small>
-					<br>
-					<% if cohort[:days_til_survey] < 100 || cohort[:days_til_survey].nil? %>
-						<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
-						<br>
-						<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
-							<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
-						<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
-							<small><button id="send_survey">Send Survey</button></small>
-						<% else %>
-							<small>Survey's sent</small>
-						<% end %>
+					<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
+						<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
+					<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
+						<small><button id="send_survey">Send Survey</button></small>
 					<% else %>
-						<small>Employment Rate: <em>Class has not graduated yet</em> </small>
-						<br>
-						<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
-						<br>
+						<small>Survey's sent</small>
 					<% end %>
-				</li>
-				</div>
-		<%end%>
+				<% else %>
+					<small>Employment Rate: <em>Class has not graduated yet</em> </small>
+					<br>
+					<small>Days until 100 day survey: <em>Class has not graduated yet</em> </small>
+					<br>
+				<% end %>
+			</li>
+			</div>
+	<%end%>
 	</ul>
 	<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 </div> <!-- officerprofile end -->

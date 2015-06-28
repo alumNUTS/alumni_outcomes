@@ -8,7 +8,6 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = {
   :host => 'quiet-atoll-1328.herokuapp.com',
-  :port => 587
 }
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
