@@ -31,7 +31,7 @@ hr{
 	font-weight: 700;
 	font-size: 26px;
 	color: #222222;
-	padding-left: 40px;
+	padding-left: 60px;
 }
 
 .charttext{
@@ -39,7 +39,7 @@ hr{
 	font-weight: 700;
 	font-size: 18px;
 	color: #222222;
-	padding-left: 40px;
+	padding-left: 30px;
 	margin-top: 300px;
 }
 
@@ -70,7 +70,7 @@ margin-left: 0;
 }
 
 .notice_board{
-	background: #x96BBCE;
+	background: #96BBCE;
 	width: 600px;
 	margin: 20px;
 	padding: 20px;
@@ -390,6 +390,7 @@ footer{
 	margin-top: 30px;
 	color: #222222;
 	margin-right: 40px;
+	margin-left: 60px;
 }
 .cohortsandchartscontainter{
 	width: 1000px;
