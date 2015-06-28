@@ -20,11 +20,13 @@
   </div><!-- container_div -->
 </header>
 <div class="navbar">
+  <a class="navbar" href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
   </div>
 
-
+<div class="singlecohortcontainer">
 
 <h1>Data about <%= @cohort.name %> </h1>
+<hr>
 <div>
 	<span>Cohort Name: </span><%= @cohort.name %> <br>
 	<span>Start Date: </span><%= @cohort.start_date %> <br>
@@ -38,17 +40,15 @@
 <% end %>
 
 
-
-
 <h3>Students</h3>
-<ul>
+<hr>
+<ul class="officer_cohorts">
 	<% @cohort.students.each do |student| %>
 	<li>
-		<a href="/students/<%= student.id %>"><%= student.name %></a>
+		<a class="cohorttag" href="/students/<%= student.id %>"><%= student.name %></a>
 	</li>
 		<% end %>
 </ul>
 
-
-<a href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
+</div> <!-- container -->
 

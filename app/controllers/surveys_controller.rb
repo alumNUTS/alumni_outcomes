@@ -38,7 +38,6 @@ class SurveysController < ApplicationController
 
   def index
     @cohort = Cohort.find(params[:cohort_id])
-    binding.pry
   end
 
   def show
