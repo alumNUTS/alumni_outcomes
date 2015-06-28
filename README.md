@@ -30,7 +30,8 @@ GitHub links for:
 * Rails  
 * chart.js  
 * Active Record  
-* Action Mailer  
+* Action Mailer
+* jQuery  
 
 
 ##Additional Resources##
