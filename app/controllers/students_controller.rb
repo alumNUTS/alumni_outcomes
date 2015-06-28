@@ -27,12 +27,8 @@ class StudentsController < ApplicationController
   end
 
   def new
-    if is_student?
       @student = Student.new
       @cohorts = Cohort.all
-    else
-      redirect_to '/errors/denied'
-    end
   end
 
   def create

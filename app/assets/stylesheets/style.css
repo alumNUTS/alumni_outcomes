@@ -70,3 +70,11 @@
 .bar-chart_explanation {
 	clear: both;
 }
+
+.outcomes_pie_chart {
+	width: 320px;
+	clear: both;
+}
+.program_pie_chart {
+	clear: both;
+}

@@ -4,6 +4,7 @@
 		</div><!-- imagediv -->
 </header>
 
+
 <div class="position_type_chart">
   <canvas id="myBarChart" width="300" height="300" style="float: left;">
   </canvas>
@@ -24,7 +25,20 @@
 </div><!--position_type chart-->
 
 
-<%= content_tag :div, class: 'cohort_stats', data:{ fullStack: @web_dev_type[1], frontEnd: @web_dev_type[2], backEnd: @web_dev_type[3], fullTime: @position_type[1], tempToPerm: @position_type[2], freelance: @position_type[3] } do %>
+<div class="outcomes_pie_chart">
+<canvas id="myPieChart" width="300" height="300">
+  </canvas>
+   <div class="pie-chart_explanation">
+    <div class="outcome_help">
+      <h3>Did you find the position through our Outcomes Program?</h3>
+      <p><%= image_tag 'red.png', size: '15x15'%> - True</p>
+      <p><%= image_tag 'sky_blue.png', size: '15x15'%> - False</p>
+    </div><!--dev-type-->
+   </div><!--pie-chart explanation-->
+  </div>
+
+
+<%= content_tag :div, class: 'cohort_stats', data:{ fullStack: @web_dev_type[1], frontEnd: @web_dev_type[2], backEnd: @web_dev_type[3], fullTime: @position_type[1], tempToPerm: @position_type[2], freelance: @position_type[3], outcomes_helped: @thru_outcomes[true], outcomes_no_help: @thru_outcomes[false] } do %>
 <% end %>
 
 <% @cohort.surveys.each do |survey| %>
