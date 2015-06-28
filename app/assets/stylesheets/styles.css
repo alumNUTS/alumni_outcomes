@@ -340,8 +340,7 @@ footer{
 
 .allcohortcontainter{
 	width: 300px;
-	margin-right: auto;
-	margin-left: auto;
+	float: left;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 	font-size: 16px;
@@ -349,6 +348,21 @@ footer{
 	background: #FEDD91;
 	margin-top: 30px;
 	color: #222222;
+	margin-right: 40px;
+}
+.cohortsandchartscontainter{
+	width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	
+}
+
+
+.chartscontainer{
+float: left;
+margin-top: 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 }
 
 .singlecohortcontainer{
@@ -362,6 +376,7 @@ footer{
 	font-weight: 700;
 	color: #222222;
 }
+
 
 
 
@@ -387,3 +402,4 @@ footer{
 	padding-bottom: 80px;
 	border-radius: 20px;
 }
+
