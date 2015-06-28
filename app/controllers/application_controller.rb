@@ -35,10 +35,6 @@ class ApplicationController < ActionController::Base
   end
 
   def officers_page
-      redirect_to '/errors/denied' unless !is_student?
-
+    redirect_to '/errors/denied' unless !is_student?
   end
-
-
-
 end

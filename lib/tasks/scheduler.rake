@@ -7,7 +7,7 @@ namespace :scheduler do
      students = Student.all
       students.each do |student|
       if (Date.today - student.cohort.end_date) > 0
-        student.status = "outcome"
+        student.status = "Outcome"
         student.save
         puts "updated students"
       end
