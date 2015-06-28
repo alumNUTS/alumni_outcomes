@@ -21,7 +21,7 @@ class OfficersController < ApplicationController
 			# to store in cohort_stats
 			students = Student.all
 			# Selecting only the cohorts that belong to that officer
-			cohorts = Cohort.where(officer_id: params[:id])
+			cohorts = Cohort.where(officer_id: params[:id]).order("id ASC")
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
 			# Filling cohort statistics with relevant information
