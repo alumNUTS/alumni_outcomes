@@ -523,3 +523,6 @@ margin-top: 30px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
 }
+.form_errors li{
+	list-style-type: none;
+}
