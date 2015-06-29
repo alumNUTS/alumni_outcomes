@@ -35,12 +35,16 @@
 	<div class="notice_board">
   <h3 class="noticehead">Notice board</h3>
   <hr>
-  <p>Don't forget to send surveys to:
-  <% @officer.cohorts.each do |cohort| %>
-    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
-      <span><%= cohort.name %></span>
-    <% end %>
-  <% end %>
+  <% if @survey_reminder == true %>
+	  <p>Don't forget to send surveys to: </p>
+	  <% @officer.cohorts.each do |cohort| %>
+	    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
+	      <span><%= cohort.name %></span>
+	    <% end %>
+	  <% end %>
+	<% else %>
+		No surveys currently need to be sent!
+	<% end %>  
 </div><!--notice board-->
 
   <div class='officerprofile'>

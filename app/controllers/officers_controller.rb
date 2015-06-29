@@ -18,7 +18,10 @@
 			cohorts = Cohort.where(officer_id: params[:id])
 			# Establighing an empty array to store cohort statistics
 			@cohort_stats = []
+			count = 0
+			@survey_reminder = false
 			# Filling cohort statistics with relevant information
+			
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,
@@ -30,6 +33,13 @@
 					day_graduated: cohort.end_date,
 					days_til_survey: (cohort.end_date + 100 - Date.today).to_i
 				}
+				if cohort.end_date + 100 < Date.today && cohort.survey_sent != true
+      		count = 1
+    		end
+			end
+
+			if count == 1
+				@survey_reminder = true
 			end
 		else
 			redirect_to '/errors/denied'
