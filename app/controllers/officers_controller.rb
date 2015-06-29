@@ -8,7 +8,7 @@
 	before_action :authorize
 
 	def show
-		if !is_student?
+		if !is_student? && current_user.id == params[:id].to_i
 			# setting @officer to the officer currently logged in
 			@officer = Officer.find(params[:id])
 			# If we want to view the cohorts in the show view along with an employment percentage

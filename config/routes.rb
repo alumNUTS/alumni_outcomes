@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post '/cohorts/sort' => 'cohorts#sort'
   # get 'error' => 'errors#index'
 
+  get '/nutella' => 'extra#index'
+  get '/alumnuts' => 'extra#alumnuts'
+
   resources :students do
     resources :surveys, only: [:new, :create]
   end

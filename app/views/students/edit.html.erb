@@ -28,7 +28,7 @@
 
 <h1>Edit your Information</h1>
   <% if @student.errors.any? %>
-    <ul>
+    <ul class="form_errors">
     <% @student.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
@@ -45,6 +45,3 @@
 </div>
 
 
-  <footer>
-    <p>©Copyright AlumNuts LLC</p>
-  </footer>

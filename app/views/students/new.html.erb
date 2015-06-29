@@ -10,7 +10,7 @@
 
 
 <h1>Student Sign-up Form</h1>
-<ul>
+<ul class="form_errors">
   <% @student.errors.full_messages.each do |message| %>
     <li><%= message %></li>
   <% end %>
@@ -32,6 +32,4 @@
 
 	</div>
 
-	<footer>
-		<p>©Copyright AlumNuts LLC</p>
-	</footer>
+
