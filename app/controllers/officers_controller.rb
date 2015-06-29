@@ -39,7 +39,7 @@
 			end
 
 			if count == 1
-				@survey_reminder = true
+				@eligible_cohorts = true
 			end
 		else
 			redirect_to '/errors/denied'
