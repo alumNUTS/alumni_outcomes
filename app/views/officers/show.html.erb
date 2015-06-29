@@ -35,12 +35,16 @@
 	<div class="notice_board">
   <h3 class="noticehead">Notice board</h3>
   <hr>
-  <p>Don't forget to send surveys to:
-  <% @officer.cohorts.each do |cohort| %>
-    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
-      <span><%= cohort.name %></span>
-    <% end %>
-  <% end %>
+  <% if @eligible_cohorts == true %>
+	  <p>Don't forget to send surveys to: </p>
+	  <% @officer.cohorts.each do |cohort| %>
+	    <% if cohort.end_date + 100 < Date.today && cohort.survey_sent != true %>
+	      <span><%= cohort.name %></span>
+	    <% end %>
+	  <% end %>
+	<% else %>
+		No surveys currently need to be sent!
+	<% end %>  
 </div><!--notice board-->
 
   <div class='officerprofile'>
@@ -81,25 +85,26 @@
 	<%= image_tag 'acorn.gif', size: '180x180', class: "load" %>
 </div> <!-- officerprofile end -->
 
-
-<div class="chart">
-	<div class="chartheadbox">
-	   <h2 class="charthead">My Cohorts</h2>
-  </div>
-	<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
-  <% end %>
-  <canvas id="myPieChart" width="300" height="300" style="float: left;">
-  </canvas><br>
-  <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
-   	<div class="chartheadbox">
-		  <h2 class="charttext">Employment After 90 Days</h2>
-		</div>
-  <div class="officer_chart_expl">
-    <p><%= image_tag 'yellow.png', size: '15x15'%> - Unemployed</p>
-    <p><%= image_tag 'blue.png', size: '15x15'%> - Employed</p>
-  </div>
-</div><!-- chart end -->
-</div><!-- containter end -->
+<% if @eligible_cohorts == true %>
+	<div class="chart">
+		<div class="chartheadbox">
+		   <h2 class="charthead">My Cohorts</h2>
+	  </div>
+		<%= content_tag :div, class: 'officer_stats', data: { stats: @cohort_stats } do %>
+	  <% end %>
+	  <canvas id="myPieChart" width="300" height="300" style="float: left;">
+	  </canvas><br>
+	  <!-- We can use AJAX to display all of this on this page if we'd like or use the links below -->
+	   	<div class="chartheadbox">
+			  <h2 class="charttext">Employment After 90 Days</h2>
+			</div>
+	  <div class="officer_chart_expl">
+	    <p><%= image_tag 'yellow.png', size: '15x15'%> - Unemployed</p>
+	    <p><%= image_tag 'blue.png', size: '15x15'%> - Employed</p>
+	  </div>
+	</div><!-- chart end -->
+	</div><!-- containter end -->
+<% end %>
 
 
 

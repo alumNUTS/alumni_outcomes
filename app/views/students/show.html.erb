@@ -20,8 +20,6 @@
   </div><!-- container_div -->
 </header>
 
-
-
 <div class="notice_survey">
   <% if flash[:notice] %>
     <div class="notice">
@@ -43,18 +41,11 @@
 
 <% if students_page? %>
   <%= link_to "Edit", edit_student_path(@student), class: 'navbar' %>
-
 <% end %>
 </div>
 
 
-
-
-
 <div class="cohortcontainter">
-
-
-
 
     <div class="studentprofile">
     <h1 class="studenthead"><%= @student.name %></h1>
@@ -73,11 +64,11 @@
 
     <p>Location: <%= "#{@student.city}, #{@student.state}" %></p>
     <% if @student.is_employed %>
-      <p>EMPLOYED</p>
+      <p>Employment Status: Employed</p>
       <p>Company: <%= @student.company_name %></p>
       <p>Started: <%= @student.employment_date %></p>
     <% else %>
-      <p>UNEMPLOYED</p>
+      <p>Employment Status: Unemployed</p>
     <% end %>
     <% if @student.skills != nil %>
       <p>Skills: <%= @student.skills %></p>
@@ -106,16 +97,4 @@
 
 </div><!-- containter -->
 
-
-
-
-
 <%= javascript_include_tag 'main' %>
-
-
-
-
-
-
-
-
