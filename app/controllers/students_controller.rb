@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
       if params[:search]
         @students = Student.search(params[:search]).order("created_at DESC")
       else
-        @students = Student.all
+        @students = Student.all.order("name ASC")
       end
     else
       redirect_to "/errors/denied"

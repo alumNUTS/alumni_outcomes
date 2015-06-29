@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/send_survey/:id' => 'officers#send_survey'
   post '/cohorts/sort' => 'cohorts#sort'
-  get 'error' => 'errors#index'
+  # get 'error' => 'errors#index'
 
   resources :students do
     resources :surveys, only: [:new, :create]
@@ -26,6 +26,6 @@ Rails.application.routes.draw do
 
   resources :errors, only: [:index, :show]
 
-  get "*path" => redirect("/errors")
+  get '*path' => redirect('/errors')
 
 end
