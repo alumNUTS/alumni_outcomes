@@ -24,7 +24,10 @@
   </div><!-- container_div -->
 </header>
 <div class="navbar">
-  <a class="navbar" href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics</a>
+  <% if !is_student? %>
+    <a class="navbar" href="/officers/<%=@cohort.officer_id%>/analytics/<%=@cohort.id%>">Cohort Analytics
+    </a>
+  <% end %>
   </div>
 
 <div class="singlecohortcontainer">
