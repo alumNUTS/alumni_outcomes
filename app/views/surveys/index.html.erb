@@ -25,7 +25,7 @@
 <div class="navbar">
 </div>
 
-
+<div class="survey-results-container">
 <div class="chartscontainer2">
 <div class="survey-charts">
 <div class="position_type_chart">
@@ -65,6 +65,7 @@
 </div>
 
 <ul class="survey-complete-students">
+  <h1>Surveys</h1>
 <% @cohort.surveys.each do |survey| %>
   <% if survey.name.nil? %>
     <li>
@@ -77,6 +78,7 @@
   <% end %>
 <% end %>
 </ul>
+</div>
 </div>
 
 
