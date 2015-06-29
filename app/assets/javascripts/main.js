@@ -1,6 +1,6 @@
 // window pop-up thanking for survey completion
 $(document).ready(function(){
-
+ console.image("http://cliparts.co/cliparts/6Ty/XKy/6TyXKy6Rc.png");
   $(".notice_survey").on("click", function(){
         $(".notice").hide()
     })
