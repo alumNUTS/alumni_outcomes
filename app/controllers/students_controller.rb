@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
 
   before_action :authorize, except: [:create, :new, :show]
   helper_method :students_page?
-  
+
   def show
     if is_student? && (!current_user.cohort.students.exists?(params[:id]))
       redirect_to "/students/#{session[:user_id]}"

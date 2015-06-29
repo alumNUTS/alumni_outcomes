@@ -89,7 +89,7 @@
         COMPLETED
       <% else %>
         Not Yet Completed
-        <% if is_student? %>
+        <% if is_student? && current_user.id == params[:id].to_i %>
           <%= link_to 'Take a survey', new_student_survey_path(@student), class: 'takesurvey'%>
         <% end %>
       <% end %>
