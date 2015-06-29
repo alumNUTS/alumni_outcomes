@@ -9,6 +9,7 @@
 
 	def show
 		if !is_student? && current_user.id == params[:id].to_i
+
 			# setting @officer to the officer currently logged in
 			@officer = Officer.find(params[:id])
 			# If we want to view the cohorts in the show view along with an employment percentage
@@ -21,7 +22,7 @@
 			count = 0
 			@survey_reminder = false
 			# Filling cohort statistics with relevant information
-			
+
 			cohorts.each do |cohort|
 				@cohort_stats << {
 					id: cohort.id,

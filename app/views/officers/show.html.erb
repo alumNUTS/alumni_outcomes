@@ -44,7 +44,7 @@
 	  <% end %>
 	<% else %>
 		No surveys currently need to be sent!
-	<% end %>  
+	<% end %>
 </div><!--notice board-->
 
   <div class='officerprofile'>
@@ -64,7 +64,7 @@
 					<small><%="Employment Rate: #{cohort[:employed]}%"%></small>
 					<br>
 					<div class="officer_survey">
-						<% if !is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true%>
+						<% if is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true && cohort[:days_til_survey] > 0 %>
 							<small><%="Days until 100 day survey: #{cohort[:days_til_survey]}"%></small>
 						<% elsif is_hundred_days?(cohort[:id]) && cohort[:survey_sent] != true %>
 							<small><button id="send_survey">Send Survey</button></small>

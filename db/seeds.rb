@@ -16,14 +16,14 @@ Cohort.create([
   {name: 'AlumNUTS', officer_id: 1, start_date: Date.parse('2014/05/27'), end_date: Date.parse('2014/08/21'), survey_sent: true},
   {name: 'Melville', officer_id: 1, start_date: Date.parse('2014/04/27'), end_date: Date.parse('2014/07/21'), survey_sent: true},
   {name: 'Lemon', officer_id: 1, start_date: Date.parse('2014/02/27'), end_date: Date.parse('2014/05/21'), survey_sent: true},
-  {name: 'Zeus', officer_id: 2, start_date: Date.parse('2015/02/27'), end_date: Date.parse('2015/05/21')},
-  {name: 'McClane', officer_id: 2, start_date: Date.parse('2015/01/27'), end_date: Date.parse('2015/04/21')},
+  {name: 'Zeus', officer_id: 2, start_date: Date.parse('2015/02/27'), end_date: Date.parse('2015/05/21'), survey_sent: false},
+  {name: 'McClane', officer_id: 2, start_date: Date.parse('2015/01/27'), end_date: Date.parse('2015/04/21'), survey_sent: false},
   {name: 'Ewok', officer_id: 3, start_date: Date.parse('2014/12/27'), end_date: Date.parse('2015/03/21')},
   {name: 'Hufflepuff', officer_id: 3, start_date: Date.parse('2014/11/27'), end_date: Date.parse('2015/02/21')},
   {name: 'Flatiron', officer_id: 1, start_date: Date.parse('2014/10/27'), end_date: Date.parse('2015/01/21')},
   {name: 'Tribeca', officer_id: 1, start_date: Date.parse('2015/04/27'), end_date: Date.parse('2015/07/21')}
   ])
-  
+
 Student.create([
   {name: 'Phil Lamplugh', email: 'philco@ga.co', password: "password", city: 'New York', state: 'New York', cohort_id: 8, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS, Jquery, JSON'},
   {name: 'Jaden Carver', email: 'jaden.carver@ga.co', password: "password", city: 'New York', state: 'New York', cohort_id: 8, skills: 'JavaScript, Ruby, Ruby on Rails, Sinatra, HTML, CSS, Jquery, JSON'},
