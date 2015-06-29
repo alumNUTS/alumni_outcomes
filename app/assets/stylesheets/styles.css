@@ -381,8 +381,8 @@ footer{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 15px;
-	padding: 40px;
-	bottom: 10px;
+	padding-top: 40px;
+	padding-bottom: 10px;
 	text-align: center;
 	width: 100%;
 	clear: both;
