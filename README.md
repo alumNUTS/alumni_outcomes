@@ -38,6 +38,8 @@ GitHub links for:
 ##Additional Resources##
 [Link](https://trello.com/b/LMog7FZr) to Trello board  
 [Link](http://i.imgur.com/y16ln8s.png) to team artifacts
+[Link](https://quiet-atoll-1328.herokuapp.com) Heroku Deployment
+
 
  
     
